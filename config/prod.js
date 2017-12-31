@@ -10,6 +10,6 @@ module.exports = {
   googleBloggerKey: process.env.GOOGLE_BLOGGER_KEY,
   wordpressUrl: process.env.WORDPRESS_URL,
   WordPressUsername: process.env.WORDPRESS_USERNAME,
-  WordPressPassword: process.env.WORDPRESS_PASSWORD'
+  WordPressPassword: process.env.WORDPRESS_PASSWORD
 }
 
