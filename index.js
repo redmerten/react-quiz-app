@@ -1,21 +1,21 @@
 const express = require('express')
 const mongoose = require('mongoose')
-//const cookieSession = require('cookie-session')
-//const passport = require('passport')
+const cookieSession = require('cookie-session')
+const passport = require('passport')
 const keys = require('./config/keys')
 
 //let mongoose know about schema. User must be listed before passport below
-//require('./models/User')
-//require('./models/Product')
-//require('./models/Cart')
-//require('./services/passport')
+require('./models/User')
+require('./models/Product')
+require('./models/Cart')
+require('./services/passport')
 //instead use below require without authRoutes(app)
-//const authRoutes = require('./routes/authRoutes') //import authRoutes function
+const authRoutes = require('./routes/authRoutes') //import authRoutes function
 
 
 
-//mongoose.Promise = global.Promise
-//mongoose.connect(keys.mongoURI)
+mongoose.Promise = global.Promise
+mongoose.connect(keys.mongoURI)
 
 
 //this creates a new express app.  There can be many apps in a project.
@@ -26,15 +26,15 @@ const app = express()
 
 //wireup middleware
 //cookieSession grabs cookie data; passport pulls id from cookie data
-// app.use(
-//   cookieSession({
-//     maxAge: 30*24*60*60*1000,//how long cookie can exist inside browser in ms
-//     keys: [keys.cookieKey]
-//   })
-// )
+app.use(
+  cookieSession({
+    maxAge: 30*24*60*60*1000,//how long cookie can exist inside browser in ms
+    keys: [keys.cookieKey]
+  })
+)
 
-//app.use(passport.initialize())
-//app.use(passport.session())
+app.use(passport.initialize())
+app.use(passport.session())
 
 //app object is the running express server
 //app.get creates a route handler
@@ -43,12 +43,12 @@ const app = express()
 //then response is sent
 
 //call authRoutes function
-//authRoutes(app)
+authRoutes(app)
 //could also do this without the import require statement above
-//require('./routes/authRoutes')(app)
-//require('./routes/productRoutes')(app)
-//require('./routes/cartRoutes')(app)
-//require('./routes/imageRoutes')(app)
+require('./routes/authRoutes')(app)
+require('./routes/productRoutes')(app)
+require('./routes/cartRoutes')(app)
+require('./routes/imageRoutes')(app)
 require('./routes/blogRoutes')(app)
 require('./routes/serviceRoutes')(app)
 
