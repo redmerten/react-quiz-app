@@ -1,19 +1,9 @@
-.body{
-  color: rgb(0,);
-  font-family: Thonburi ;
+.pt-popover-open {
+  font-family: Courier;
+  color: #1A3256;
 }
 
-
-/*for 667px and smaller = iphone 8+*/
-@media screen and (max-device-width: 736px)  {
-  body {
-    background-color: lightgreen;
-  }
-}
-
-@media screen and (max-width: 699px) and (min-width: 520px) {
-  ul li a {
-    padding-left: 30px;
-    background: url(email-icon.png) left center no-repeat;
-  }
+a.pt-menu-item {
+  font-family: Courier;
+  color: #1A3256;
 }

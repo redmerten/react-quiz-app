@@ -3,8 +3,6 @@
  */
 
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {fetchBlog} from '../actions/index'
 import {
   Dialog,
 } from "@blueprintjs/core"
@@ -13,18 +11,24 @@ import bikes1 from '../images/bikeShopPics/bikes1.JPG'
 const footerStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(5,1fr)',
-  gridGap: '20px',
-  paddingTop:"20px",
-  marginLeft:'50px',
-  marginRight:'50px'
+  gridGap: '0%',
+  paddingTop:"0px",
+  marginLeft:'5%',
+  marginRight:'5%'
+}
+
+const blueBlk='#1A3256'
+
+const fontStyle ={
+  fontFamily:'Courier',
+  fontVariant: 'small-caps',
+  color: blueBlk
 }
 
 class Footer extends Component {
   state = {ownerIsOpen: false, hoursIsOpen: false, missionIsOpen: false}
   toggleOwnerDialog = () => this.setState({ ownerIsOpen: !this.state.ownerIsOpen })
-  toggleHoursDialog = () => this.setState({ hoursIsOpen: !this.state.hoursIsOpen })
   toggleMissionDialog = () => this.setState({ missionIsOpen: !this.state.missionIsOpen })
-
 
   renderOwnerPopUp(){
     return(
@@ -36,11 +40,13 @@ class Footer extends Component {
           isOpen={this.state.ownerIsOpen}
           onClose={this.toggleOwnerDialog}
           title="About Greg DerTorossian"
+          style ={{...fontStyle, 'width':'22vw'}}
         >
 
-          <div className="pt-dialog-body" style={{'width':'90%','fontSize':'120%'}}>
-            <img src={bikes1} style={{'height':'200px', 'width':'90%'}}/>
-            <div style={{'fontSize':'120%', 'marginTop':'20px'}}>
+          <div className="pt-dialog-body" style={{'width':'20vw','fontSize':'120%', 'marginLeft':'1vw'}}>
+            <img src={bikes1} style={{'height':'20vh', 'width':'20vw'}}
+            />
+            <div style={{'fontSize':'120%', 'marginTop':'5%', ...fontStyle}}>
               <p>I have been passionate about biking since I was a child riding in the Saratoga hills.  Initially I rode a Schwinn Stingray, and then evolved to riding BMX bikes for fun. In my 30’s I discovered the joys of both mountain bike riding and road riding.</p>
 
               <p> My passion for mountain bikes lead my to co-coaching the Woodside Beasts, a high school mountain bike team.  I also enjoy racing various enduro series through out the West.  Perhaps the greatest joy for me has been the people I have meet through biking.  </p>
@@ -63,10 +69,12 @@ class Footer extends Component {
           isOpen={this.state.missionIsOpen}
           onClose={this.toggleMissionDialog}
           title="Woodside Bike Shop Mission"
+          style ={{...fontStyle, 'width':'22vw'}}
         >
-          <div className="pt-dialog-body" style={{'width':'90%','fontSize':'120%'}}>
-            <img src={bikes1} style={{'height':'200px', 'width':'80%'}}/>
-            <div style={{'fontSize':'120%', 'marginTop':'20px'}}>
+          <div className="pt-dialog-body" style={{'width':'20vw','fontSize':'120%', 'marginLeft':'1vw'}}>
+            <img src={bikes1} style={{'height':'20vh', 'width':'20vw'}}
+            />
+            <div style={{'fontSize':'120%', 'marginTop':'5%'}}>
               <p>Our mission is to serve our local community with the best information, products and service.</p>
             </div>
           </div>
@@ -80,22 +88,26 @@ class Footer extends Component {
     //console.log('footer state', this.state)
     return (
       <div style={footerStyle}>
-
-        <ul style={{'gridColumn':'2/3', 'gridRow':'1', 'listStyle': 'none'}}>
+        <div>
+        <ul style={{'gridColumn':'1/2', 'gridRow':'1', 'listStyle': 'none'}}>
           <strong>About Us</strong>
           {this.renderOwnerPopUp()}
           {this.renderMission()}
         </ul>
-
-
+        </div>
+        <div style={{
+          'gridColumn':'1/6',
+          'gridRow':'2',
+          'marginTop':'2%' ,
+          'display':'flex',
+          'justifyContent':'center'
+        }}>
+          <p style = {{}}>©2017 Merten Designs</p>
+        </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) =>{
-  return state
-}
-
-export default connect(mapStateToProps, {fetchBlog})(Footer)
+export default Footer
 

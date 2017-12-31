@@ -49,7 +49,7 @@ const ServiceRow = ()=>{
           }
           return(
             <div key={i} style={{'display':'flex', 'flexDirection':'column', 'alignItems':'center'}}>
-              <ScrollAnimation animateIn='flipInY'>
+              <ScrollAnimation animateIn='fadeIn'>
                 <img src={p} alt="" style={{ 'maxWidth':'60vh'}}/>
               </ScrollAnimation>
               <p style={{...fontStyle, 'fontSize':'2.5em', 'marginTop':'2%'}}>{servicetypes[i]}</p>
