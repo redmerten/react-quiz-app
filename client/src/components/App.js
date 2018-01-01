@@ -22,7 +22,7 @@ class  App extends Component {
           <BrowserRouter>
             <div >
               <Header/>
-              <Route path="/serviceChart" component={Services}/>
+              {/*<Route path="/serviceChart" component={Services}/>*/}
               <Route exact path="/" component={Landing}/>
               <Route path='/gear' component={Gear}/>
               <Route exact path="/detail/:blogid" component={BlogDetail}/>

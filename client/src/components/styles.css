@@ -1,9 +1,19 @@
 .pt-popover-open {
   font-family: Courier;
   color: #1A3256;
+  font-variant: small-caps;
 }
 
 a.pt-menu-item {
   font-family: Courier;
   color: #1A3256;
+  font-variant: small-caps;
 }
+
+.pt-menu-item {
+  font-family: Courier;
+  color: #1A3256;
+  font-size: 1.25em;
+  font-variant: small-caps;
+}
+

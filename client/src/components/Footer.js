@@ -22,7 +22,8 @@ const blueBlk='#1A3256'
 const fontStyle ={
   fontFamily:'Courier',
   fontVariant: 'small-caps',
-  color: blueBlk
+  color: blueBlk,
+  fontSize: '1.5em'
 }
 
 class Footer extends Component {
@@ -33,7 +34,7 @@ class Footer extends Component {
   renderOwnerPopUp(){
     return(
       <li>
-        <button className="pt-button pt-minimal" onClick={this.toggleOwnerDialog}>
+        <button style={{...fontStyle}} className="pt-button pt-minimal" onClick={this.toggleOwnerDialog}>
           Local Owner
         </button>
         <Dialog
@@ -44,7 +45,7 @@ class Footer extends Component {
         >
 
           <div className="pt-dialog-body" style={{'width':'20vw','fontSize':'120%', 'marginLeft':'1vw'}}>
-            <img src={bikes1} style={{'height':'20vh', 'width':'20vw'}}
+            <img src={bikes1} alt='' style={{'height':'20vh', 'width':'20vw'}}
             />
             <div style={{'fontSize':'120%', 'marginTop':'5%', ...fontStyle}}>
               <p>I have been passionate about biking since I was a child riding in the Saratoga hills.  Initially I rode a Schwinn Stingray, and then evolved to riding BMX bikes for fun. In my 30’s I discovered the joys of both mountain bike riding and road riding.</p>
@@ -61,8 +62,8 @@ class Footer extends Component {
 
   renderMission(){
     return(
-      <li>
-        <button className="pt-button pt-minimal" onClick={this.toggleMissionDialog}>
+      <li >
+        <button style={{...fontStyle}} className="pt-button pt-minimal" onClick={this.toggleMissionDialog}>
           Mission
         </button>
         <Dialog
@@ -72,7 +73,7 @@ class Footer extends Component {
           style ={{...fontStyle, 'width':'22vw'}}
         >
           <div className="pt-dialog-body" style={{'width':'20vw','fontSize':'120%', 'marginLeft':'1vw'}}>
-            <img src={bikes1} style={{'height':'20vh', 'width':'20vw'}}
+            <img src={bikes1} alt='' style={{'height':'20vh', 'width':'20vw'}}
             />
             <div style={{'fontSize':'120%', 'marginTop':'5%'}}>
               <p>Our mission is to serve our local community with the best information, products and service.</p>
@@ -90,7 +91,7 @@ class Footer extends Component {
       <div style={footerStyle}>
         <div>
         <ul style={{'gridColumn':'1/2', 'gridRow':'1', 'listStyle': 'none'}}>
-          <strong>About Us</strong>
+          <strong style={{...fontStyle}} >About Us</strong>
           {this.renderOwnerPopUp()}
           {this.renderMission()}
         </ul>

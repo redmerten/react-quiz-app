@@ -28,58 +28,7 @@ const fontStyle ={
   fontVariant: 'small-caps',
   color: blueBlk
 }
-// {/*<Link to="/gear">*/}
-// {/*<button className="pt-button pt-minimal" style={{...fontStyle, "marginLeft":"50px", 'fontSize':'1.5em'}}>Gear </button>*/}
-// {/*</Link>*/}
-//
-//
-// {/*<Link to="/serviceChart">*/}
-// {/*<button className="pt-button pt-minimal" style={{...fontStyle, "marginLeft":"50px", 'fontSize':'1.5em'}}>Service </button>*/}
-// {/*</Link>*/}
 
-/*
- <nav className="pt-navbar pt-fixed-top ">
- <div>Large</div>
- </nav>
-
-
-
-
-
- render(){
- return(
- <div >
- <Media query= '(max-width: 812px)'>
- {matches => {
- console.log('matches', matches)
- return(
- matches ? (
- <div>Small</div>
- ):(
- <div>Large</div>
- )
- )
- }
-
-
- }
- </Media>
- </div>
- )
- }
-
-
-
-
-
- ) :
- return(
- {this.renderLargeScreen()}
- )
- }
-
-
- */
 
 const bikeBrands =
   [{brand:'Santa Cruz',url:'https://www.santacruzbicycles.com/en-US'},
@@ -255,7 +204,7 @@ class Header extends Component {
           <MenuItem text='Location'/>
         </a>
         {/*<div onClick={this.toggleHoursDialog}>*/}
-          <MenuItem text='Hours' >
+          <MenuItem text='Hours' style={{'fontSize':'1.5em'}}>
             <div style={{
               'display':'flex',
               'flexDirection':'column',

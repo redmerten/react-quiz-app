@@ -25,8 +25,3 @@ export const fetchSelectedBlog = (blogid) => async dispatch => {
     {params: {blogid}})
   dispatch({ type: FETCH_SELECTED_BLOG, payload: res.data})
 }
-
-
-// export const setBlogSelected =(blogid) => {
-//   return { type: SET_BLOG_SELECTED, payload:{selected:true, id:blogid} }
-// }
