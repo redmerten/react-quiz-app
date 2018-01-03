@@ -22,8 +22,7 @@ const blueBlk='#1A3256'
 const fontStyle ={
   fontFamily:'Courier',
   fontVariant: 'small-caps',
-  color: blueBlk,
-  fontSize: '1.5em'
+  color: blueBlk
 }
 
 class Footer extends Component {
@@ -41,13 +40,13 @@ class Footer extends Component {
           isOpen={this.state.ownerIsOpen}
           onClose={this.toggleOwnerDialog}
           title="About Greg DerTorossian"
-          style ={{...fontStyle, 'width':'22vw'}}
+          style ={{...fontStyle, 'fontSize': '1em','width':'32vw', 'lineSpacing':'1em'}}
         >
 
-          <div className="pt-dialog-body" style={{'width':'20vw','fontSize':'120%', 'marginLeft':'1vw'}}>
-            <img src={bikes1} alt='' style={{'height':'20vh', 'width':'20vw'}}
+          <div className="pt-dialog-body" style={{'width':'30vw','fontSize':'120%', 'marginLeft':'1vw'}}>
+            <img src={bikes1} alt='' style={{'height':'30vh', 'width':'30vw'}}
             />
-            <div style={{'fontSize':'120%', 'marginTop':'5%', ...fontStyle}}>
+            <div style={{'fontSize':'1em', 'marginTop':'5%', ...fontStyle, 'lineSpacing':'1em'}}>
               <p>I have been passionate about biking since I was a child riding in the Saratoga hills.  Initially I rode a Schwinn Stingray, and then evolved to riding BMX bikes for fun. In my 30’s I discovered the joys of both mountain bike riding and road riding.</p>
 
               <p> My passion for mountain bikes lead my to co-coaching the Woodside Beasts, a high school mountain bike team.  I also enjoy racing various enduro series through out the West.  Perhaps the greatest joy for me has been the people I have meet through biking.  </p>
@@ -70,12 +69,12 @@ class Footer extends Component {
           isOpen={this.state.missionIsOpen}
           onClose={this.toggleMissionDialog}
           title="Woodside Bike Shop Mission"
-          style ={{...fontStyle, 'width':'22vw'}}
+          style ={{...fontStyle, 'width':'32vw'}}
         >
-          <div className="pt-dialog-body" style={{'width':'20vw','fontSize':'120%', 'marginLeft':'1vw'}}>
-            <img src={bikes1} alt='' style={{'height':'20vh', 'width':'20vw'}}
+          <div className="pt-dialog-body" style={{'width':'30vw','fontSize':'1em', 'marginLeft':'1vw'}}>
+            <img src={bikes1} alt='' style={{'height':'30vh', 'width':'30vw'}}
             />
-            <div style={{'fontSize':'120%', 'marginTop':'5%'}}>
+            <div style={{'fontSize':'1em', 'marginTop':'5%'}}>
               <p>Our mission is to serve our local community with the best information, products and service.</p>
             </div>
           </div>
