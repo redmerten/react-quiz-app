@@ -222,8 +222,8 @@ class Header extends Component {
                    style={{maxWidth:'25vw'}}/>
 
               <div style={{...fontStyle, 'margin' :'2% 0% 0% 8%'}}>
-                <h2 >Woodside Bike Shop Hours</h2>
-                <div style={{'fontSize':'1.5em'}}>
+                <h4 >Woodside Bike Shop Hours</h4>
+                <div style={{'fontSize':'1.25em'}}>
                   <p>Monday through Saturday: 10am - 6pm</p>
                   <p>Sunday by Appointment </p>
                 </div>

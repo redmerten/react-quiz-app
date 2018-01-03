@@ -9,23 +9,20 @@ I wanted to learn something from doing this site since it is so simple.  I decid
 I played with several npm styling packages and used some components from BlueprintJS. Hoping for a real complete component package in 2018.  No one is quite there yet.
 
 Stack:
-Node
-Mongo - set up but not used yet
-React
-Redux
+Node, Mongo (set up but not used yet), React, Redux
 
 Libraries/Tools:
-Create React App
-Express
-Passport
-Wordpress
-react-router-dom
-react-dom
-react-redux
-redux-thunk
-axios
-react-animate-on-scroll
-@blueprintjs/core
+Create React App,
+Express,
+Passport,
+Wordpress,
+react-router-dom,
+react-dom,
+react-redux,
+redux-thunk,
+axios,
+react-animate-on-scroll,
+@blueprintjs/core,
 react-fa
 
 
