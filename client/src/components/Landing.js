@@ -20,7 +20,7 @@ class Landing extends Component {
   render(){
     console.log('state from landing', this.props)
     return (
-      <div style={{'padding':'60px'}}>
+      <div style={{'padding':'0px'}}>
         <PrimaryRow/>
         <IntroRow/>
         <Bikes/>
