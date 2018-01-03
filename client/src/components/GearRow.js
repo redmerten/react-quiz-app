@@ -35,7 +35,7 @@ const GearRow = ()=>{
         'justifyContent':'center',
         'height':'10vh'
       }}>
-        <p style={{...fontStyle, 'fontSize':'2em', 'color': blueBlk, 'margin':'auto','alignSelf':'flex-end'}}>
+        <p style={{...fontStyle, 'fontSize':'2.5em', 'color': blueBlk, 'margin':'auto','alignSelf':'flex-end'}}>
           We have gear and parts for every need
         </p>
       </div>

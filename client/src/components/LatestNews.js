@@ -69,11 +69,11 @@ class LatestNews extends Component{
                   src={b.thumbnail.link} alt=""
                   style={{'width':'25vw', 'height':'25vh'}}>
                 </img>
-                <h4 style={{'marginTop':'2%', 'lineHeight':'150%'}}>
+                <h5 style={{'marginTop':'2%', 'lineHeight':'150%'}}>
                   {b.title}
-                </h4>
+                </h5>
 
-                <p style={{'fontSize':'1.5em', 'marginTop':'3%'}}>
+                <p style={{'fontSize':'1.25em', 'marginTop':'2%'}}>
                   {b.content.length > 150 ? b.content.slice(0,150) : b.content}
                 </p>
                 <Link
