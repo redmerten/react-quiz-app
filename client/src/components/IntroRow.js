@@ -45,7 +45,7 @@ const renderIntro=()=>{
       <div style={{'display':'flex',
         'flexDirection':'column',
         'justifyContent':'space-evenly',
-        'margin':'0% 10% 0% 15%',
+        'margin':'0% 8% 0% 12%',
         'height': '80vh'
       }}>
 

@@ -69,9 +69,9 @@ class LatestNews extends Component{
                   src={b.thumbnail.link} alt=""
                   style={{'width':'25vw', 'height':'25vh'}}>
                 </img>
-                <h3 style={{'marginTop':'2%', 'lineHeight':'150%'}}>
+                <h4 style={{'marginTop':'2%', 'lineHeight':'150%'}}>
                   {b.title}
-                </h3>
+                </h4>
 
                 <p style={{'fontSize':'1.5em', 'marginTop':'3%'}}>
                   {b.content.length > 150 ? b.content.slice(0,150) : b.content}
@@ -106,7 +106,7 @@ class LatestNews extends Component{
             'alignItems':'center',
             //'height':'10vh'
           }}>
-            <p style={{...fontStyle, 'fontSize':'3em', 'color': blueBlk, 'marginTop':'0%'}}>
+            <p style={{...fontStyle, 'fontSize':'2.5em', 'color': blueBlk, 'marginTop':'0%'}}>
               Latest News
             </p>
           </div>

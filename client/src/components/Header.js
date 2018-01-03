@@ -97,7 +97,14 @@ class Header extends Component {
           <Icon size="3x" name="bicycle" style={{'marginLeft':'3%'}}/>
           <Link to='/' className="pt-navbar-heading"
                 style={{"marginLeft":"3%"}}>
-            <h4 style={{"width":"20vw",...fontStyle, 'fontSize':'2em'}}>Woodside Bike Shop</h4>
+            <h4 style={{
+              "width":"20vw",
+              ...fontStyle,
+              'fontSize':'1.75em',
+              'marginTop':'3%'}}
+            >
+              Woodside Bike Shop
+            </h4>
           </Link>
 
           <div style={{"marginLeft":"0%", 'display': 'flex',

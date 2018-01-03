@@ -23,15 +23,18 @@ const viewStyle = {
   //gridGap:'5%'
 }
 
-const fontStyle ={
-  fontFamily:'Courier',
-  fontVariant: 'small-caps',
-}
-
 const lightBlue='#52A0F5'
 const orange = '#BB6558'
 const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
+
+const fontStyle ={
+  fontFamily:'Courier',
+  fontVariant: 'small-caps',
+  color: blueBlk
+}
+
+
 
 const Bikes = ()=>{
   const bikepics=[mountain, bmx, cityCruiser, road, electric,  kids, fat, fixie]
@@ -39,11 +42,11 @@ const Bikes = ()=>{
   return(
     <div style={{...viewStyle,'backgroundColor': orange}}>
       <div style={{
-        'gridColumn':'2/4',
+        'gridColumn':'1/5',
         'justifySelf':'center',
         'height':'15vh'
       }}>
-        <p style={{...fontStyle,'fontSize':'3em', 'color': blueBlk, 'marginTop':'2%'}}>
+        <p style={{...fontStyle,'fontSize':'2.5em', 'color': blueBlk, 'marginTop':'2%'}}>
           We have bikes for every purpose and budget
         </p>
       </div>
@@ -81,7 +84,14 @@ const Bikes = ()=>{
                        }}
                   />
                 </ScrollAnimation>
-                <h2 style={{'marginTop':'2%'}}>{biketypes[i]}</h2>
+                <p style={{
+                  'marginTop':'2%',
+                  ...fontStyle,
+                  'fontSize': '1.5em'
+                }}
+                >
+                  {biketypes[i]}
+                </p>
               </div>
             )
           })}

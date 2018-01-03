@@ -35,7 +35,7 @@ const ServiceRow = ()=>{
         'justifyContent':'center',
         'height':'15vh'
       }}>
-        <p style={{...fontStyle, 'fontSize':'3em', 'color': blueBlk, 'margin':'auto','alignSelf':'flex-end'}}>
+        <p style={{...fontStyle, 'fontSize':'2.5em', 'color': blueBlk, 'margin':'auto','alignSelf':'flex-end'}}>
           Our master technicians can help with any service
         </p>
       </div>
@@ -52,7 +52,7 @@ const ServiceRow = ()=>{
               <ScrollAnimation animateIn='fadeIn'>
                 <img src={p} alt="" style={{ 'maxWidth':'60vh'}}/>
               </ScrollAnimation>
-              <p style={{...fontStyle, 'fontSize':'2.5em', 'marginTop':'2%'}}>{servicetypes[i]}</p>
+              <p style={{...fontStyle, 'fontSize':'2em', 'marginTop':'2%'}}>{servicetypes[i]}</p>
             </div>
           )
         })}

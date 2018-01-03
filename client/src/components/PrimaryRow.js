@@ -31,7 +31,7 @@ const primaryRow = () =>{
         <img src={wideShopSign} alt="" style={{'width':'100vw', 'height':'90vh'}}/>
         <div style={{'position':'absolute',  'top':'17%', 'right':'.5vw' }}>
           <ScrollAnimation animateIn='zoomIn' >
-            <h1 style={{...fontStyle, 'color':blueBlk, 'fontSize':'5em'}}>Ready to Ride?</h1>
+            <h1 style={{...fontStyle, 'color':blueBlk, 'fontSize':'4em'}}>Ready to Ride?</h1>
           </ScrollAnimation>
         </div>
       </div>
