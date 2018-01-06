@@ -6,9 +6,10 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 
 import storefront1 from '../images/bikeShopPics/storefront1.JPG'
-import services1 from '../images/bikeShopPics/services1.JPG'
+import services3 from '../images/bikeShopPics/services3.JPG'
 import bikes1 from '../images/bikeShopPics/bikes1.JPG'
 import gear1 from '../images/bikeShopPics/gear1.JPG'
+
 
 const viewStyle = {
   height:'80vh',
@@ -39,7 +40,7 @@ const renderIntro=()=>{
     'True Local Knowledge',
     'Expert Repair Services'
   ]
-  const pics=[bikes1, services1, gear1]
+  const pics=[bikes1, services3, gear1]
   return(
     <div style={{'gridColumn':'4/7'}}>
       <div style={{'display':'flex',

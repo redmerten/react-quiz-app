@@ -48,7 +48,7 @@ const GearRow = ()=>{
           }
           return(
             <div key={i} style={style}>
-              <ScrollAnimation animateIn='pulse' >
+              <ScrollAnimation animateIn='fadeIn' >
                 <img src={p} alt="" style={{ 'borderRadius':'50%', 'maxHeight':'55vh'}}/>
               </ScrollAnimation>
             </div>

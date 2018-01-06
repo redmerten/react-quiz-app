@@ -6,6 +6,11 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {fetchServiceChart} from '../actions/index'
 
+const lightBlue='#52A0F5'
+const orange = '#BB6558'
+const darkBlue = '#0073C4'
+const blueBlk='#1A3256'
+
 const tableStyle = {
   display:'grid',
   gridTemplateColumns: 'repeat(8,1fr)',
@@ -15,7 +20,8 @@ const tableStyle = {
   padding:"5px",
   marginLeft:'40px',
   marginRight:'390px',
-  fontSize:'1.2em'
+  fontSize:'1.2em',
+
 
   }
 const headerStyle = {
@@ -29,7 +35,8 @@ const headerStyle = {
   marginRight:'400px',
   fontSize:'1.25em',
   fontWeight: 'bold',
-  backgroundColor: 'lightGrey'
+  backgroundColor: lightBlue,
+  color: 'white'
 }
 
 const  gridHeader1Style={
@@ -66,6 +73,7 @@ const  gridHeader5Style= {
   //justifySelf:'end',
   paddingRight:'0px'
 }
+
 
 
 class Services extends Component {
@@ -110,7 +118,7 @@ class Services extends Component {
   render(){
     console.log('serviceChart', this.props.serviceChart)
     return(
-      <div style={{'padding':'80px 60px 0px 80px'}}>
+      <div style={{'padding':'80px 60px 50px 80px'}}>
         {Array.isArray(this.props.serviceChart) ? this.renderChartHeader() : <div/>}
         {Array.isArray(this.props.serviceChart) ? this.renderServiceChart() : <div/>}
       </div>

@@ -29,20 +29,24 @@ const fontStyle ={
   color: blueBlk
 }
 
+// ORDER PER OWNER: santa cruz, norco, yeti, dav, salsa, haro, pure, kink, reid, transition
+//why buy from wbs vs direct from mfr
 
 const bikeBrands =
   [{brand:'Santa Cruz',url:'https://www.santacruzbicycles.com/en-US'},
     {brand:'Norco',url:'http://www.norco.com'},
+    {brand:'Yeti',url:'http://www.yeticycles.com/'},
+    {brand:'Da Vinci',url:'http://www.devinci.com/'},
     {brand:'Salsa',url:'http://salsacycles.com'},
     {brand:'Haro', url:'https://www.harobikes.com/'},
+    {brand:'Pure Cycles',url:'https://www.purecycles.com/?gclid=CjwKCAiA9rjRBRAeEiwA2SV4ZeI1SCGgjK7KwtUZMTOCKXhPewipzp0v-OcW5IRInrXisjBLQ_QppxoCnEMQAvD_BwE'},
+    {brand: 'KINK BMX', url: 'https://www.kinkbmx.com/'},
     {brand:'Reid',url:'https://www.reidbikes.com/'},
-    {brand:'Da Vinci',url:'http://www.devinci.com/'},
-    {brand:'Transition',url:'https://www.transitionbikes.com/'},
-    {brand:'Yeti',url:'http://www.yeticycles.com/'},
-    {brand:'Pure Cycles',url:'https://www.purecycles.com/?gclid=CjwKCAiA9rjRBRAeEiwA2SV4ZeI1SCGgjK7KwtUZMTOCKXhPewipzp0v-OcW5IRInrXisjBLQ_QppxoCnEMQAvD_BwE'}
+    {brand:'Transition',url:'https://www.transitionbikes.com/'}
   ]
 //const gearTypes = ['Accessories', 'Components', 'Suspension', 'Protection', 'Tires']
 //const services = ['Tune Ups', 'Wheels', 'Tires', 'Suspension', 'Brakes']
+// add contact us w/ phone and email
 
 const bikingLinks = [
   {brand: 'Midpeninsula Open Space Trails', url: 'https://www.openspace.org/preserves'},
@@ -51,7 +55,7 @@ const bikingLinks = [
 
 
 const popOverMenu = (typeArr)=> {
-  typeArr.sort((a, b)=>a.brand>b.brand)
+  //typeArr.sort((a, b)=>a.brand>b.brand)
   return(
     <Menu >
       {typeArr.map((b,i)=>{
@@ -87,7 +91,6 @@ class Header extends Component {
           "border":"0",
           "margin": "0 auto",
           'width':'100vw'
-
         }}
       >
         <div
@@ -110,7 +113,8 @@ class Header extends Component {
           <div style={{"marginLeft":"0%", 'display': 'flex',
             'justifyContent': 'space-evenly', 'width': '60vw',...fontStyle}}>
             <Popover
-              content={popOverMenu(bikeBrands)}
+              //content={popOverMenu(bikeBrands)}
+              content={this.renderBikesAndServices()}
               interactionKind={PopoverInteractionKind.CLICK}
               position={Position.BOTTOM}
             >
@@ -118,7 +122,7 @@ class Header extends Component {
                 className="pt-button pt-minimal"
                 style={{...fontStyle, 'fontSize':'1.5em'}}
               >
-                Bikes
+                Bikes and Services
               </button>
             </Popover>
 
@@ -147,12 +151,26 @@ class Header extends Component {
           </div>
         </div>
 
-        <div className="pt-navbar-group pt-align-right" style={{"width":"17vw", 'display': 'flex',
-          'justifyContent': 'flex-end'}}>
-          <button className="pt-button pt-minimal pt-icon-mobile-phone" style={{'marginRight':'3%'}}>
-            <a href="tel:6502991071" style={{...fontStyle, 'fontSize':'1.5em'}}>Call Us</a>
-          </button>
+        <div className="pt-navbar-group pt-align-right" style={{"width":"13vw", 'display': 'flex',
+          'justifyContent': 'flex-end', 'marginRight':'3%'}}>
+          <Popover
+            content={this.renderContact()}
+            interactionKind={PopoverInteractionKind.CLICK}
+            position={Position.BOTTOM}
+            style={{}}
+          >
+            <button
+              className="pt-button pt-minimal"
+              style={{...fontStyle, "width":"100%", 'fontSize':'1.5em'}}>Contact Us</button>
+          </Popover>
         </div>
+
+        {/*<div className="pt-navbar-group pt-align-right" style={{"width":"17vw", 'display': 'flex',*/}
+          {/*'justifyContent': 'flex-end'}}>*/}
+          {/*<button className="pt-button pt-minimal pt-icon-mobile-phone" style={{'marginRight':'3%'}}>*/}
+            {/*<a href="tel:6502991071" style={{...fontStyle, 'fontSize':'1.5em'}}>Call Us</a>*/}
+          {/*</button>*/}
+        {/*</div>*/}
       </nav>
     )
   }
@@ -202,6 +220,9 @@ class Header extends Component {
     )
   }
 
+
+  //m-f 10- 7
+  // s-s 10-6
   renderHours=()=>{
     const map = "https://www.google.com/maps/place/Woodside+Bike+Shop/@37.4561654,-122.2299071,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa384f074f6ad:0x5901b012d225ee78!8m2!3d37.4561654!4d-122.2277184"
     console.log('renderhours', this.state.hoursIsOpen)
@@ -221,17 +242,58 @@ class Header extends Component {
               <img src={bikes1} alt=""
                    style={{maxWidth:'25vw'}}/>
 
-              <div style={{...fontStyle, 'margin' :'2% 0% 0% 8%'}}>
+              <div style={{...fontStyle, 'margin' :'2% 0% 0% 5%'}}>
                 <h4 >Woodside Bike Shop Hours</h4>
                 <div style={{'fontSize':'1.25em'}}>
-                  <p>Monday through Saturday: 10am - 6pm</p>
-                  <p>Sunday by Appointment </p>
+                  <p>Monday through Friday: 10am - 7pm</p>
+                  <p>Saturday and Sunday: 10am - 6pm</p>
                 </div>
               </div>
             </div>
           </MenuItem>
       </Menu>
 
+    )
+  }
+
+  renderContact=()=>{
+    return(
+      <Menu style={{'width':'10vw'}}>
+        <a
+          href="tel:6502991071"
+          style={{...fontStyle, 'fontSize':'1em'}}
+        >
+          <MenuItem className="pt-button pt-minimal pt-icon-mobile-phone" text='Call'/>
+        </a>
+        <a href="mailto:woodsidemechanic@gmail.com" style={{...fontStyle, 'fontSize':'1em'}}>
+          <MenuItem className="pt-button pt-minimal pt-icon-envelope" text='Email'/>
+        </a>
+      </Menu>
+    )
+  }
+
+
+  renderBikesAndServices=()=>{
+    return(
+      <Menu>
+        <Popover
+          content={popOverMenu(bikeBrands)}
+          interactionKind={PopoverInteractionKind.CLICK}
+          position={Position.BOTTOM}
+        >
+          <button
+            className="pt-button pt-minimal"
+            style={{...fontStyle, 'fontSize':'1.25em'}}
+          >
+            Bikes
+          </button>
+        </Popover>
+
+        <Link to='/serviceChart'>
+          <MenuItem text="Services" />
+        </Link>
+
+      </Menu>
     )
   }
 
@@ -244,15 +306,13 @@ class Header extends Component {
           {matches => {
             console.log('matches', matches)
             return(
-            matches ? (
-              this.renderSmallScreen()
-            ):(
-              this.renderLargeScreen()
-            )
+              matches ? (
+                this.renderSmallScreen()
+              ):(
+                this.renderLargeScreen()
+                )
             )
           }
-
-
           }
         </Media>
       </div>

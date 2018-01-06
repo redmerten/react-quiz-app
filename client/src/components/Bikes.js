@@ -74,7 +74,8 @@ const Bikes = ()=>{
                      'width':'23vw',
                      'marginBottom':'2%'
                    }}>
-                <ScrollAnimation animateIn='swing' initiallyVisible={true}>
+                <ScrollAnimation animateIn='pulse' initiallyVisible={true}
+                >
                   <img src={p} alt=""
                        style={{
                          'borderRadius':'50%',

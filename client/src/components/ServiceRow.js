@@ -9,6 +9,9 @@ import 'animate.css/animate.min.css'
 import services1 from '../images/bikeShopPics/services1.JPG'
 import services2 from '../images/bikeShopPics/services2.JPG'
 import services3 from '../images/bikeShopPics/services3.JPG'
+import tech1 from '../images/bikeShopPics/jonTech1.JPG'
+import tech2 from '../images/bikeShopPics/jonTech2.JPG'
+
 
 const viewStyle = {
   height:'80vh',
@@ -27,7 +30,7 @@ const blueBlk='#1A3256'
 
 const ServiceRow = ()=>{
   const gearpics=[services2, services3, services1]
-  const servicetypes=['Repairs', 'Custom Builds', 'Accessory Installation']
+  const servicetypes=['Repairs', 'Preventative Maintenance', 'Custom Builds']
   return(
     <div style={{...viewStyle,'backgroundColor': lightBlue}}>
       <div style={{
@@ -50,7 +53,7 @@ const ServiceRow = ()=>{
           return(
             <div key={i} style={{'display':'flex', 'flexDirection':'column', 'alignItems':'center'}}>
               <ScrollAnimation animateIn='fadeIn'>
-                <img src={p} alt="" style={{ 'maxWidth':'60vh'}}/>
+                <img src={p} alt="" style={{ 'maxWidth':'20vw', 'maxHeight':'65vh'}}/>
               </ScrollAnimation>
               <p style={{...fontStyle, 'fontSize':'2em', 'marginTop':'2%'}}>{servicetypes[i]}</p>
             </div>

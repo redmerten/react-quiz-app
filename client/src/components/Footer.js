@@ -102,7 +102,7 @@ class Footer extends Component {
           'display':'flex',
           'justifyContent':'center'
         }}>
-          <p style = {{}}>©2017 Merten Designs</p>
+          <p style = {{}}>©2017 AM Market Strategies</p>
         </div>
       </div>
     )
