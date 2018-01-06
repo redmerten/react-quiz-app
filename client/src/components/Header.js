@@ -120,7 +120,7 @@ class Header extends Component {
             >
               <button
                 className="pt-button pt-minimal"
-                style={{...fontStyle, 'fontSize':'1.5em'}}
+                style={{...fontStyle, 'fontSize':'1.25em'}}
               >
                 Bikes and Services
               </button>
@@ -135,7 +135,7 @@ class Header extends Component {
             >
               <button
                 className="pt-button pt-minimal"
-                style={{...fontStyle, 'fontSize':'1.5em'}}>Location and Hours</button>
+                style={{...fontStyle, 'fontSize':'1.25em'}}>Location and Hours</button>
             </Popover>
 
             <Popover
@@ -146,7 +146,7 @@ class Header extends Component {
             >
               <button
                 className="pt-button pt-minimal"
-                style={{...fontStyle, 'fontSize':'1.5em'}}>Local Biking Info </button>
+                style={{...fontStyle, 'fontSize':'1.25em'}}>Local Biking Info </button>
             </Popover>
           </div>
         </div>
@@ -161,7 +161,7 @@ class Header extends Component {
           >
             <button
               className="pt-button pt-minimal"
-              style={{...fontStyle, "width":"100%", 'fontSize':'1.5em'}}>Contact Us</button>
+              style={{...fontStyle, "width":"100%", 'fontSize':'1.25em'}}>Contact Us</button>
           </Popover>
         </div>
 
