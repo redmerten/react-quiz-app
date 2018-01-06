@@ -27,11 +27,11 @@ const blueBlk='#1A3256'
 const primaryRow = () =>{
   return(
 
-      <div style={{'gridColumn':'span 6', 'height':'90vh'}}>
+      <div style={{'height':'90vh'}}>
         <img src={wideShopSign} alt="" style={{'width':'100vw', 'height':'90vh'}}/>
-        <div style={{'position':'absolute',  'top':'17%', 'right':'.5vw' }}>
-          <ScrollAnimation animateIn='zoomIn' >
-            <h1 style={{...fontStyle, 'color':blueBlk, 'fontSize':'4em'}}>Ready to Ride?</h1>
+        <div style={{'position':'absolute',  'top':'18%', 'right':'8%' }}>
+          <ScrollAnimation animateIn='zoomIn' offset={0}>
+            <h1 style={{...fontStyle, 'color':blueBlk, 'fontSize':'3em'}}>Ready to Ride?</h1>
           </ScrollAnimation>
         </div>
       </div>
