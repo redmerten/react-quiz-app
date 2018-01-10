@@ -16,8 +16,6 @@ class BlogDetail extends Component{
     blog: null
   }
 
-
-
   componentDidMount(){
     const selectedBlog = this.props.blog.filter ?
       this.props.blog.filter(b=>b.id===this.props.match.params.blogid)[0] :
