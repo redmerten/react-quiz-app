@@ -29,6 +29,7 @@ const styles = {
       width:'100vw',
       //marginBottom: '10%',
       //backgroundColor:orange
+      paddingBottom: '25%'
     },
     headingDiv:{
       display:'flex',
@@ -47,7 +48,7 @@ const styles = {
       display:'flex',
       justifyContent:'space-evenly',
       maxHeight:'65vh',
-      margin: '2% 0% 0% 0%'
+      margin: '0% 0% 0% 0%'
     },
     imgServDiv:{
       display:'flex',
@@ -58,7 +59,7 @@ const styles = {
     },
     imgStyle:{
       maxWidth:'100%',
-      maxHeight:'55vh',
+      maxHeight:'50vh',
       borderRadius: '50%'
     },
     imgP:{

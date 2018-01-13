@@ -49,7 +49,8 @@ const styles = {
       display:'flex',
       justifyContent:'space-evenly',
       maxHeight:'65vh',
-      marginTop: '2%'
+      marginTop: '2%',
+      marginBottom:'5%%'
     },
     imgServDiv:{
       display:'flex',
