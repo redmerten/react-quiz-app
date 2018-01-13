@@ -62,7 +62,11 @@ const renderSmlScreen=()=>{
            }}/>
       <div style={{'position':'absolute',  'top':'12%', 'right':'8%' }}>
         <ScrollAnimation animateIn='zoomIn' offset={0}>
-          <h1 style={{...fontStyle, 'color':blueBlk, 'fontSize':'1em'}}>Ready to Ride?</h1>
+          <div style={{'display':'flex', 'flexDirection':'column', 'justifyContent':'center', 'alignItems':'center'}}>
+            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'1em'}}>Ready</p>
+            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'1em'}}>to</p>
+            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'1em'}}>Ride?</p>
+          </div>
         </ScrollAnimation>
       </div>
     </div>

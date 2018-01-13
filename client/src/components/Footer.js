@@ -8,14 +8,6 @@ import {
 } from "@blueprintjs/core"
 import bikes1 from '../images/bikeShopPics/bikes1.JPG'
 
-const footerStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(5,1fr)',
-  gridGap: '0%',
-  paddingTop:"0px",
-  marginLeft:'5%',
-  marginRight:'5%'
-}
 
 const blueBlk='#1A3256'
 
@@ -23,6 +15,50 @@ const fontStyle ={
   fontFamily:'Courier',
   fontVariant: 'small-caps',
   color: blueBlk
+}
+
+
+const styles={
+  footerDiv: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: '0% 5% 5% 5%',
+    //marginRight: '5%',
+  },
+  col1Style: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent:'flex-start',
+    listStyle: 'none',
+    marginBottom:'5%'
+  },
+  designedByDiv: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop:'0%'
+  },
+
+  lgView:{
+    dialog:{
+      fontSize: '1em',
+      width:'30%',
+      lineSpacing:'1em'
+    },
+    dialogDiv:{
+
+    }
+
+
+  },
+
+
+
+  smView:{
+
+  }
+
 }
 
 class Footer extends Component {
@@ -33,18 +69,23 @@ class Footer extends Component {
   renderOwnerPopUp(){
     return(
       <li>
-        <button style={{...fontStyle}} className="pt-button pt-minimal" onClick={this.toggleOwnerDialog}>
+        <button
+          style={{
+          ...fontStyle,
+          'fontSize':'1.5em',
+        }}
+                className="pt-button pt-minimal" onClick={this.toggleOwnerDialog}>
           Local Owner
         </button>
         <Dialog
           isOpen={this.state.ownerIsOpen}
           onClose={this.toggleOwnerDialog}
           title="About Greg DerTorossian"
-          style ={{...fontStyle, 'fontSize': '1em','width':'32vw', 'lineSpacing':'1em'}}
+          style ={{...fontStyle, ...styles.lgView.dialog}}
         >
 
-          <div className="pt-dialog-body" style={{'width':'30vw','fontSize':'120%', 'marginLeft':'1vw'}}>
-            <img src={bikes1} alt='' style={{'height':'30vh', 'width':'30vw'}}
+          <div className="pt-dialog-body" style={{'width':'98%','fontSize':'120%', 'marginLeft':'1%'}}>
+            <img src={bikes1} alt='' style={{'height':'250px', 'maxWidth':'100%'}}
             />
             <div style={{'fontSize':'1em', 'marginTop':'5%', ...fontStyle, 'lineSpacing':'1em'}}>
               <p>I have been passionate about biking since I was a child riding in the Saratoga hills.  Initially I rode a Schwinn Stingray, and then evolved to riding BMX bikes for fun. In my 30’s I discovered the joys of both mountain bike riding and road riding.</p>
@@ -62,7 +103,7 @@ class Footer extends Component {
   renderMission(){
     return(
       <li >
-        <button style={{...fontStyle}} className="pt-button pt-minimal" onClick={this.toggleMissionDialog}>
+        <button style={{...fontStyle, 'fontSize':'1.5em'}} className="pt-button pt-minimal" onClick={this.toggleMissionDialog}>
           Mission
         </button>
         <Dialog
@@ -85,22 +126,19 @@ class Footer extends Component {
 
 
   render() {
-    //console.log('footer state', this.state)
     return (
-      <div style={footerStyle}>
+      <div style={styles.footerDiv}>
         <div>
-        <ul style={{'gridColumn':'1/2', 'gridRow':'1', 'listStyle': 'none'}}>
-          <strong style={{...fontStyle}} >About Us</strong>
-          {this.renderOwnerPopUp()}
-          {this.renderMission()}
-        </ul>
+          <ul style={{
+            ...styles.col1Style
+          }}>
+            <strong style={{...fontStyle, 'fontSize':'2em'}} >About Us</strong>
+            {this.renderOwnerPopUp()}
+            {this.renderMission()}
+          </ul>
         </div>
         <div style={{
-          'gridColumn':'1/6',
-          'gridRow':'2',
-          'marginTop':'2%' ,
-          'display':'flex',
-          'justifyContent':'center'
+          ...styles.designedByDiv
         }}>
           <p style = {{}}>©2017 AM Market Strategies</p>
         </div>

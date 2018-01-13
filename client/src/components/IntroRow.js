@@ -24,18 +24,41 @@ const styles= {
     display: 'grid',
     gridTemplateColumns: 'repeat(6,1fr)'
   },
+
   lgIntroView:{
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'space-evenly',
-    margin:'0% 8% 0% 12%',
-    height: '80vh'
+    div:{
+      display:'flex',
+      flexDirection:'column',
+      justifyContent:'space-evenly',
+      margin:'0% 8% 0% 12%',
+      height: '80vh',
+    },
+    fontSize:'2em',
+    pic: {
+      maxHeight:'20vh',
+      borderRadius:'50%'
+    },
+    justifyContent:'space-between'
   },
+
   smlIntroView:{
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'space-evenly',
-    height: '375px',
+    div:{
+      display:'flex',
+      flexDirection:'column',
+      justifyContent:'space-between',
+      margin:'0% 2% 0% 2%',
+      height: '375px',
+    },
+    fontSize:'1em',
+    pic: {
+      maxHeight:'15vh',
+      borderRadius:'50%'
+    },
+    justifyContent:'center',
+    sideMargins:{
+      margin: '5% 5% 5% 5%'
+    }
+
   }
 }
 
@@ -45,9 +68,11 @@ const fontStyle ={
   color: blueBlk
 }
 
+const lgIntroStyle={
+  fontSize:'2em'
+}
 
-
-const renderIntro=()=>{
+const renderIntro=(style)=>{
   const better=[
     'Wide Selection of Bikes',
     'True Local Knowledge',
@@ -55,26 +80,28 @@ const renderIntro=()=>{
   ]
   const pics=[bikes1, services3, gear1]
   return(
-      <div style={styles.lgIntroView}>
+      <div style={style.div}>
         {better.map((e,i)=> {
           return(
             <div key={i}
                  style={{
                     'display':'flex',
                     'flexDirection':'row',
+                   //...style.justifyContent,
                     'justifyContent':'space-between',
-                    'alignItems':'center'
+                    'alignItems':'center',
+                   ...style.sideMargins
             }}>
               <ScrollAnimation key={i}
                                animateIn='zoomIn'
               >
-                <p style={{...fontStyle, 'fontSize':'2.25em'}}>{e}</p>
+                <p style={{...fontStyle, 'fontSize':style.fontSize}}>{e}</p>
               </ScrollAnimation>
               <ScrollAnimation
                 animateIn="slideInRight"
               >
                 <img src={pics[i]} alt=""
-                     style={{'maxHeight':'20vh', 'borderRadius':'50%'}}
+                     style={style.pic}
                 />
               </ScrollAnimation>
             </div>
@@ -84,7 +111,7 @@ const renderIntro=()=>{
   )
 }
 
-const renderLgScreen=(style)=>{
+const renderLgScreen=()=>{
   return(
     <div style={{'backgroundColor':lightBlue, ...styles.lgViewStyle}}>
       <div style={{'gridColumn':'1/4', }}>
@@ -92,16 +119,15 @@ const renderLgScreen=(style)=>{
              style={{'maxHeight':'80vh'}}/>
       </div>
       <div style={{'gridColumn':'4/7'}}>
-        {renderIntro(style)}
+        {renderIntro(styles.lgIntroView)}
       </div>
     </div>
   )
 }
 
-const renderSmlScreen=(style)=>{
+const renderSmlScreen=()=>{
   return(
-
-    renderIntro(style)
+    renderIntro(styles.smlIntroView)
   )
 }
 
@@ -113,9 +139,9 @@ const introRow = () =>{
           console.log('matches', matches)
           return(
             matches ? (
-              renderSmlScreen(styles.smlIntroView)
+              renderSmlScreen()
             ):(
-              renderLgScreen(styles.lgIntroView)
+              renderLgScreen()
             )
           )
         }

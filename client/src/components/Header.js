@@ -33,19 +33,37 @@ const styles ={
     height: '60px',
     boxShadow:'0 0 0 0 '
   },
-  navLgLeftDiv: {
-    flexGrow:'1',
-    display:'flex' ,
-    justifyContent: 'flex-start',
-    alignItems:'center',
-    marginLeft:"1%"
+  navLgBrandDiv: {
+    div:{
+      flexGrow:'1',
+      display:'flex' ,
+      justifyContent: 'flex-start',
+      alignItems:'center',
+      marginLeft:"1%"
+    },
+    iconSize:'3x',
+    textStyle:{
+      fontSize:'1.75em',
+      marginTop:'3%',
+    },
+
   },
-  navSmCtrDiv:{
-    flexGrow:'3',
-    display:'flex' ,
-    justifyContent: 'center',
-    alignItems:'center',
-    //marginLeft:"1%"
+  navSmlBrandDiv:{
+    div:{
+      flexGrow:'3',
+      display:'flex' ,
+      justifyContent: 'center',
+      alignItems:'center',
+      //marginLeft:"1%"
+    },
+    iconSize:'2x',
+    textStyle:{
+      fontSize:'1.35em',
+      marginTop:'3%',
+    },
+
+
+
   },
   largeScreenBrandDiv:{},
   smallScreenBrandDiv:{},
@@ -98,10 +116,6 @@ const popOverMenu = (typeArr)=> {
   )
 }
 
-/*
- {'flexGrow':'1', 'display':'flex' , 'justifyContent': 'flex-start',
- 'alignItems':'center', "marginLeft":"1%"}
- */
 
 class Header extends Component {
   // state = {hoursIsOpen: false}
@@ -109,15 +123,15 @@ class Header extends Component {
   renderBrandDiv=(style)=>{
     return(
       <div
-        style={style}
+        style={style.div}
       >
-        <Icon size="3x" name="bicycle" style={{'marginLeft':'3%'}}/>
+        <Icon size={style.iconSize} name="bicycle" style={{'marginLeft':'3%'}}/>
         <Link to='/' //className="pt-navbar-heading"
               style={{"marginLeft":"3%", 'display':'flex', 'alignItems':'center'}}>
           <h4 style={{
             //"width":"20vw",
             ...styles.fontStyle,
-            'fontSize':'1.75em',
+            'fontSize':style.textStyle.fontSize,
             'marginTop':'3%',
             //'alignSelf':'center'
           }}
@@ -200,7 +214,7 @@ class Header extends Component {
         className="pt-navbar pt-fixed-top "
         style = {styles.navStyle}
       >
-          {this.renderBrandDiv(styles.navLgLeftDiv)}
+          {this.renderBrandDiv(styles.navLgBrandDiv)}
           {this.renderLargeNavItems()}
           {this.renderContactUs()}
 
@@ -219,7 +233,7 @@ class Header extends Component {
         >
           <Icon size="2x" name="bars"/>
         </div>
-        {this.renderBrandDiv(styles.navSmCtrDiv)}
+        {this.renderBrandDiv(styles.navSmlBrandDiv)}
         {this.renderContactUs()}
       </nav>
     )
