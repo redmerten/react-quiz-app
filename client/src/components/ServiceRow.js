@@ -11,8 +11,6 @@ import Media from 'react-media'
 import services1 from '../images/bikeShopPics/services1.JPG'
 import services2 from '../images/bikeShopPics/services2.JPG'
 import services3 from '../images/bikeShopPics/services3.JPG'
-import tech1 from '../images/bikeShopPics/jonTech1.JPG'
-import tech2 from '../images/bikeShopPics/jonTech2.JPG'
 
 
 const fontStyle ={

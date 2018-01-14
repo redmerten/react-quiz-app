@@ -6,6 +6,8 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import bikes1 from '../images/bikeShopPics/IMG_2609.JPG'
 import Media from 'react-media'
+//import Menu as BurgerMenu, {SubMenu, MenuItem as BurgerMenuItem} from 'rc-menu';
+//import { slide as BurgerMenu } from 'react-burger-menu'
 import './styles.css'
 
 import {
@@ -24,6 +26,7 @@ const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
 const styles ={
+
   navStyle:{
     display:'flex',
     backgroundColor:'white',
@@ -54,25 +57,30 @@ const styles ={
       display:'flex' ,
       justifyContent: 'center',
       alignItems:'center',
-      //marginLeft:"1%"
     },
     iconSize:'2x',
     textStyle:{
       fontSize:'1.35em',
       marginTop:'3%',
     },
+  },
 
-
+  burgerButton:{
+    border:'none'
 
   },
+
   largeScreenBrandDiv:{},
   smallScreenBrandDiv:{},
+
   fontStyle:{
     fontFamily:'Courier',
     fontVariant: 'small-caps',
     color: blueBlk
   }
 }
+
+const map = "https://www.google.com/maps/place/Woodside+Bike+Shop/@37.4561654,-122.2299071,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa384f074f6ad:0x5901b012d225ee78!8m2!3d37.4561654!4d-122.2277184"
 
 /*
 
@@ -208,39 +216,8 @@ class Header extends Component {
     )
   }
 
-  renderLargeScreen=()=>{
-    return(
-      <nav
-        className="pt-navbar pt-fixed-top "
-        style = {styles.navStyle}
-      >
-          {this.renderBrandDiv(styles.navLgBrandDiv)}
-          {this.renderLargeNavItems()}
-          {this.renderContactUs()}
-
-      </nav>
-    )
-  }
-
-  renderSmallScreen=()=>{
-    return(
-      <nav className="pt-navbar pt-fixed-top "
-           style={styles.navStyle}>
-        <div style={{
-          "marginLeft": "2.5%",
-          'flexGrow':'1'
-          }}
-        >
-          <Icon size="2x" name="bars"/>
-        </div>
-        {this.renderBrandDiv(styles.navSmlBrandDiv)}
-        {this.renderContactUs()}
-      </nav>
-    )
-  }
-
   renderHours=()=>{
-    const map = "https://www.google.com/maps/place/Woodside+Bike+Shop/@37.4561654,-122.2299071,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa384f074f6ad:0x5901b012d225ee78!8m2!3d37.4561654!4d-122.2277184"
+
     // console.log('renderhours', this.state.hoursIsOpen)
     return(
       <Menu>
@@ -313,7 +290,76 @@ class Header extends Component {
     )
   }
 
+  renderSmallScreen=()=>{
+    return(
+      <nav className="pt-navbar pt-fixed-top "
+           style={styles.navStyle}>
+        <div style={{
+          "marginLeft": "2.5%",
+          'flexGrow':'1'
+        }}
+        >
+          <Popover
+            content={
+              <Menu>
+                {this.renderBikesAndServices()}
+                <Menu>
+                  <a href= {map} style={{...styles.fontStyle}}>
+                    <MenuItem text='Location'/>
+                  </a>
+                </Menu>
 
+                <Menu text='Hours' style={{'fontSize':'1.5em'}}>
+                  <div style={{
+                    'display':'flex',
+                    'flexDirection':'column',
+                    'width':'250px',
+                    'margin' :'2% 0% 0% 2%'
+                  }}>
+                    <p style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Hours</p>
+                    <p style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Mon-Fri: 10am-7pm</p>
+                    <p style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Sat-Sun: 10am-6pm</p>
+                  </div>
+                </Menu>
+
+                <Popover
+                  content={popOverMenu(bikingLinks)}
+                  interactionKind={PopoverInteractionKind.CLICK}
+                  position={Position.BOTTOM}
+                  style={{}}
+                >
+                  <button
+                    className="pt-button pt-minimal"
+                    style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Local Biking Info </button>
+                </Popover>
+              </Menu>
+            }
+            position={Position.RIGHT_TOP}>
+            <button className="pt-button pt-minimal">
+              <Icon size="2x" name="bars"/>
+            </button>
+          </Popover>
+
+        </div>
+        {this.renderBrandDiv(styles.navSmlBrandDiv)}
+        {this.renderContactUs()}
+      </nav>
+    )
+  }
+
+  renderLargeScreen=()=>{
+    return(
+      <nav
+        className="pt-navbar pt-fixed-top "
+        style = {styles.navStyle}
+      >
+        {this.renderBrandDiv(styles.navLgBrandDiv)}
+        {this.renderLargeNavItems()}
+        {this.renderContactUs()}
+
+      </nav>
+    )
+  }
 
   render(){
     return(
