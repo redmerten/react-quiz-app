@@ -62,7 +62,7 @@ const styles = {
       // maxHeight:'55vh',
       // borderRadius: '10%'
       maxWidth:'100%',
-      maxHeight:'350px',
+      maxHeight:'256px',
       borderRadius: '10%'
     },
     imgP:{

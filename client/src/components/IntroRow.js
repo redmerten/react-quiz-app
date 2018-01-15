@@ -35,7 +35,7 @@ const styles= {
     },
     fontSize:'2em',
     pic: {
-      maxHeight:'255.78px',
+      maxHeight:'20vh',
       borderRadius:'50%'
     },
     justifyContent:'space-between'
