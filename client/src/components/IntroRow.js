@@ -47,7 +47,7 @@ const styles= {
       flexDirection:'column',
       justifyContent:'space-between',
       margin:'0% 2% 0% 2%',
-      height: '375px',
+      //height: '375px',
     },
     fontSize:'1em',
     pic: {

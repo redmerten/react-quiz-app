@@ -141,7 +141,7 @@ class Footer extends Component {
             <img src={GREG2} alt='' style={style.img}
             />
             <div style={{...style.pDiv, ...fontStyle}}>
-              <p style={style.p}>I have been passionate about biking since I was a child riding in the Saratoga hills.  Initially, I rode a Schwinn Stingray and then evolved to riding BMX bikes for fun. In my 30s, I discovered the joys of both mountain bike riding and road riding.</p>
+              <p style={{...style.p, ...fontStyle}}>I have been passionate about biking since I was a child riding in the Saratoga hills.  Initially, I rode a Schwinn Stingray and then evolved to riding BMX bikes for fun. In my 30s, I discovered the joys of both mountain bike riding and road riding.</p>
 
               <p style={style.p}> My passion for mountain bikes led me to co-coaching the Woodside Beasts, a high school mountain bike team.  I also enjoy racing various enduro series throughout the West.  Perhaps the greatest joy for me has been the people I have met through biking.  </p>
               <p style={style.p}> I am thrilled to share my passion with you through the Woodside Bike Shop.</p>
