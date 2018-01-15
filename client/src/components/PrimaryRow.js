@@ -15,31 +15,52 @@ const viewStyle = {
   height:'80vh',
   width:'100vw'
 }
-
-const fontStyle ={
-  fontFamily:'OldTown',
-  fontVariant: 'small-caps',
-}
-
 const lightBlue='#52A0F5'
 const orange = '#BB6558'
 const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
-const renderLgScreen=()=>{
+
+const fontStyle ={
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //fontVariant: 'small-caps',
+  color: blueBlk
+}
+
+const styles={
+  lgScreen:{
+    div:{
+      height:'90vh',
+      display:'flex',
+    },
+    img:{
+      flexGrow:'1',
+      height:'100%'
+    },
+    animatedWordsDiv:{
+      position:'absolute',
+      top:'80px',
+      right:'5%'
+      //top:'18%',
+      //right:'8%'
+    },
+    words:{
+      fontSize:'150%'
+    }
+  },
+  smlScreen:{
+
+  }
+}
+
+const renderLgScreen=(style)=>{
   return(
-  <div style={{
-    'height':'90vh',
-    'display':'flex',
-    //'paddingTop':'40px'
-  }}>
+  <div style={style.div}>
     <img src={wideShopSign} alt=""
-         style={{
-           'flexGrow':'1',
-           'height':'100%'}}/>
-    <div style={{'position':'absolute',  'top':'18%', 'right':'8%' }}>
+         style={style.img}/>
+    <div style={style.animatedWordsDiv}>
       <ScrollAnimation animateIn='zoomIn' offset={0}>
-        <h1 style={{...fontStyle, 'color':blueBlk, 'fontSize':'3em'}}>Ready to Ride?</h1>
+        <p style={{...fontStyle, ...style.words}}>Passion for Riding</p>
       </ScrollAnimation>
     </div>
   </div>
@@ -51,21 +72,21 @@ const renderSmlScreen=()=>{
       'display':'flex',
       'justifyContent':'center',
       'alignItems':'stretch',
-      //'width':'100vw',
       'height':'375px',
       'paddingTop':'40px'
     }}>
       <img src={wideShopSign} alt=""
            style={{
              'width':'100%',
-             'height' :'auto'
+             //'height' :'auto',
+             'height':'375px'
            }}/>
-      <div style={{'position':'absolute',  'top':'12%', 'right':'8%' }}>
+      <div style={{'position':'absolute',  'top':'80px', 'right':'5%' }}>
         <ScrollAnimation animateIn='zoomIn' offset={0}>
           <div style={{'display':'flex', 'flexDirection':'column', 'justifyContent':'center', 'alignItems':'center'}}>
-            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'1em'}}>Ready</p>
-            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'1em'}}>to</p>
-            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'1em'}}>Ride?</p>
+            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'120%'}}>Ready</p>
+            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'120%'}}>to</p>
+            <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'120%'}}>Ride?</p>
           </div>
         </ScrollAnimation>
       </div>
@@ -82,9 +103,9 @@ const primaryRow = () =>{
           console.log('matches', matches)
           return(
             matches ? (
-              renderSmlScreen()
+              renderSmlScreen(styles.smlScreen)
             ):(
-              renderLgScreen()
+              renderLgScreen(styles.lgScreen)
             )
           )
         }

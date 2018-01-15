@@ -14,21 +14,22 @@ import services3 from '../images/bikeShopPics/services3.JPG'
 import tech1 from '../images/bikeShopPics/jonTech1.JPG'
 import tech2 from '../images/bikeShopPics/jonTech2.JPG'
 
-const fontStyle ={
-  fontFamily:'OldTown',
-  fontVariant: 'small-caps',
-}
-
 const lightBlue='#52A0F5'
 const orange = '#BB6558'
 const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
+const fontStyle ={
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //fontVariant: 'small-caps',
+  color: blueBlk
+}
+
 const styles = {
   lgViewStyle:{
     mainDiv:{
       height:'80vh',
-      width:'100vw',
+      width:'100%',
     },
     headingDiv:{
       display:'flex',
@@ -38,8 +39,9 @@ const styles = {
 
     },
     headingP:{
-      'fontSize':'2.5em',
-      'color': blueBlk,
+      fontSize:'2.5em',
+      color: blueBlk,
+      margin: '0% 5%'
     },
     headingPart2:{
       marginLeft:'.5em'
@@ -88,13 +90,13 @@ const styles = {
       justifyContent:'center',
       height:'75px',
       alignItems:'center',
-      marginTop:'3%'
+      margin:'3% '
     },
     headingP:{
-      'fontSize':'1.5em',
-      'color': blueBlk,
+      fontSize:'1.5em',
+      color: blueBlk,
       //'margin':'auto',
-      'alignSelf':'center'
+      alignSelf:'center'
     },
     imgsDivStyle:{
       display:'flex',

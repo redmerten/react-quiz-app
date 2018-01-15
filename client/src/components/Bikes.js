@@ -30,8 +30,8 @@ const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
 const fontStyle ={
-  fontFamily:'OldTown',
-  fontVariant: 'small-caps',
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //fontVariant: 'small-caps',
   color: blueBlk
 }
 
@@ -76,7 +76,8 @@ const styles ={
       borderRadius:'50%',
       maxHeight:'22vh',
       maxWidth:'22vw',
-      marginTop:'2%'
+      marginTop:'2%',
+      overflow:'hidden'
     },
     bikeTypeStyle:{
       marginTop:'2%',

@@ -16,8 +16,8 @@ const blueBlk='#1A3256'
 
 const styles ={
   fontStyle:{
-    fontFamily:'Oldtown',
-    fontVariant: 'small-caps',
+    fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+    //fontVariant: 'small-caps',
     color: blueBlk
   },
 

@@ -1,20 +1,20 @@
 .pt-popover-open {
-  font-family: Oldtown;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #1A3256;
-  font-variant: small-caps;
+  /*font-variant: small-caps;*/
 }
 
 a.pt-menu-item {
-  font-family: Oldtown;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #1A3256;
-  font-variant: small-caps;
+  /*font-variant: small-caps;*/
 }
 
 .pt-menu-item {
-  font-family: Oldtown;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #1A3256;
   font-size: 1.25em;
-  font-variant: small-caps;
+  /*font-variant: small-caps;*/
 }
 
 .pt-dialog-header h5 {

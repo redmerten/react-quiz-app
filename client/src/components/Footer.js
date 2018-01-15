@@ -17,8 +17,8 @@ import GREG3 from '../images/bikeShopPics/GREG3.jpg'
 const blueBlk='#1A3256'
 
 const fontStyle ={
-  fontFamily:'Oldtown',
-  fontVariant: 'small-caps',
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //fontVariant: 'small-caps',
   color: blueBlk
 }
 

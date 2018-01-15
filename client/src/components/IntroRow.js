@@ -20,7 +20,7 @@ const blueBlk='#1A3256'
 const styles= {
   lgViewStyle: {
     height: '80vh',
-    width: '100vw',
+    width: '100%',
     display: 'grid',
     gridTemplateColumns: 'repeat(6,1fr)'
   },
@@ -63,8 +63,8 @@ const styles= {
 }
 
 const fontStyle ={
-  fontFamily:'Oldtown',
-  fontVariant: 'small-caps',
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //fontVariant: 'small-caps',
   color: blueBlk
 }
 
@@ -116,7 +116,7 @@ const renderLgScreen=()=>{
     <div style={{'backgroundColor':lightBlue, ...styles.lgViewStyle}}>
       <div style={{'gridColumn':'1/4', }}>
         <img src={storefront1} alt=""
-             style={{'maxHeight':'80vh'}}/>
+             style={{'height':'80vh', 'maxWidth':'100%','overflow':'hidden'}}/>
       </div>
       <div style={{'gridColumn':'4/7'}}>
         {renderIntro(styles.lgIntroView)}
@@ -136,7 +136,7 @@ const introRow = () =>{
     <div style={{'backgroundColor':lightBlue}} >
       <Media query= '(max-width: 812px)'>
         {matches => {
-          console.log('matches', matches)
+          console.log('matches introrow', matches)
           return(
             matches ? (
               renderSmlScreen()

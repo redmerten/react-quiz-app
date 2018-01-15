@@ -16,10 +16,15 @@ const viewStyle = {
   height:'80vh',
   width:'100vw'
 }
+const lightBlue='#52A0F5'
+const orange = '#BB6558'
+const darkBlue = '#0073C4'
+const blueBlk='#1A3256'
 
 const fontStyle ={
-  fontFamily:'Oldtown',
-  fontVariant: 'small-caps',
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  color: blueBlk
+  //fontVariant: 'small-caps',
 }
 
 const styles = {
@@ -123,10 +128,6 @@ const styles = {
   },
 }
 
-const lightBlue='#52A0F5'
-const orange = '#BB6558'
-const darkBlue = '#0073C4'
-const blueBlk='#1A3256'
 
 const renderGearRow = (style)=> {
   const gearpics = [sqgear1, sqgear2, sqgear3]

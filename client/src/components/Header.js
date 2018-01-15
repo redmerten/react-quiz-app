@@ -27,8 +27,8 @@ const blueBlk='#1A3256'
 
 const styles ={
   fontStyle:{
-    fontFamily:'Oldtown',
-    fontVariant: 'small-caps',
+    fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+    //fontVariant: 'small-caps',
     color: blueBlk
   },
   navStyle:{
@@ -74,7 +74,7 @@ const styles ={
 
   },
   smlViewP:{
-    fontFamily:'Oldtown',
+    fontFamily:'Helvetica Neue,Helvetica,Arial,sans-serif',
     fontVariant: 'small-caps',
     color: blueBlk,
     fontSize:'1em',
@@ -140,7 +140,7 @@ class Header extends Component {
         <Icon size={style.iconSize} name="bicycle" style={{'marginLeft':'3%'}}/>
         <Link to='/' //className="pt-navbar-heading"
               style={{"marginLeft":"3%", 'display':'flex', 'alignItems':'center'}}>
-          <h4 style={{...styles.fontStyle, ...style.textStyle}}>
+          <h4 style={{'fontFamily':'Oldtime', ...style.textStyle}}>
             Woodside Bike Shop
           </h4>
         </Link>

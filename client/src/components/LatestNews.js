@@ -25,8 +25,9 @@ const gridStyle={
 }
 
 const fontStyle ={
-  fontFamily:'Courier',
-  fontVariant: 'small-caps',
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //fontVariant: 'small-caps',
+  color: blueBlk
 }
 
 
