@@ -39,12 +39,12 @@ const styles = {
 
     },
     headingP:{
-      fontSize:'2.5em',
+      fontSize:'150%',
       color: blueBlk,
       margin: '0% 5%'
     },
     headingPart2:{
-      marginLeft:'.5em'
+      marginLeft:'120%'
     },
     imgsDivStyle:{
       display:'flex',
@@ -57,19 +57,20 @@ const styles = {
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
-      maxWidth:'30vw'
+      maxWidth:'30vw',
+
     },
     imgStyle:{
       //maxWidth:'100%',
       // maxHeight:'55vh',
       // borderRadius: '10%'
       maxWidth:'100%',
-      maxHeight:'256px',
+      maxHeight:'50vh',
       borderRadius: '10%'
     },
     imgP:{
       fontSize:'2em',
-      marginTop:'2%'
+      margin:'2% 10% 0% 10%'
     }
 
   },
@@ -129,7 +130,7 @@ const styles = {
 const renderServiceRow=(style)=>{
   //const gearpics=[services2, services3, services1]
   const gearpics=[tech2, tech1,services3, ]
-  const servicetypes=['Repairs', 'Preventative Maintenance', 'Custom Builds']
+  const servicetypes=['Repairs', 'Maintenance', 'Custom Builds']
   const heading = [`Jonathon Kieninger, our Master Technician, Can Help with Any Service`]
   return(
   <div style={style.mainDiv}>

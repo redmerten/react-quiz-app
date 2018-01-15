@@ -50,7 +50,7 @@ const styles ={
       height:'15vh'
     },
     pStyle:{
-      fontSize:'2.5em',
+      fontSize:'150%',
       color: blueBlk,
       marginTop:'2%'
     },
@@ -82,7 +82,7 @@ const styles ={
     bikeTypeStyle:{
       marginTop:'2%',
       ...fontStyle,
-      fontSize: '1.5em'
+      fontSize: '125%'
     }
   },
 
@@ -101,7 +101,7 @@ const styles ={
       //height:'20px'
     },
     pStyle:{
-      fontSize:'1.5em',
+      fontSize:'125%',
       color: blueBlk,
       marginTop:'2%'
     },
@@ -132,7 +132,7 @@ const styles ={
     bikeTypeStyle:{
       marginTop:'2%',
       ...fontStyle,
-      fontSize: '1.5em',
+      fontSize: '125%',
       //alignSelf:'flex-start'
     }
 
