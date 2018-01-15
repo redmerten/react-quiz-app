@@ -18,7 +18,7 @@ const viewStyle = {
 }
 
 const fontStyle ={
-  fontFamily:'Courier',
+  fontFamily:'Oldtown',
   fontVariant: 'small-caps',
 }
 
@@ -92,7 +92,7 @@ const styles = {
     headingP:{
       'fontSize':'1.75em',
       'color': blueBlk,
-      //'margin':'auto',
+      'margin':'0% 8%',
       'alignSelf':'center'
     },
     imgsDivStyle:{
@@ -130,7 +130,7 @@ const blueBlk='#1A3256'
 
 const renderGearRow = (style)=> {
   const gearpics = [sqgear1, sqgear2, sqgear3]
-  const heading = ['We have gear and parts', 'for every need']
+  const heading = ['We Have Gear and Parts for Every Need']
   const gearTypes = ['Parts', 'Gear', 'Accessories']
 
   return (
@@ -142,10 +142,10 @@ const renderGearRow = (style)=> {
         >
           {heading[0]}
         </p>
-        <p style={{...fontStyle, ...style.headingP, ...style.headingPart2}}
-        >
-          {heading[1]}
-        </p>
+        {/*<p style={{...fontStyle, ...style.headingP, ...style.headingPart2}}*/}
+        {/*>*/}
+          {/*{heading[1]}*/}
+        {/*</p>*/}
         {/*</ScrollAnimation>*/}
 
       </div>

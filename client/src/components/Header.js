@@ -26,7 +26,11 @@ const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
 const styles ={
-
+  fontStyle:{
+    fontFamily:'Oldtown',
+    fontVariant: 'small-caps',
+    color: blueBlk
+  },
   navStyle:{
     display:'flex',
     backgroundColor:'white',
@@ -61,7 +65,7 @@ const styles ={
     iconSize:'2x',
     textStyle:{
       fontSize:'1.35em',
-      marginTop:'3%',
+      marginTop:'5%',
     },
   },
 
@@ -69,15 +73,15 @@ const styles ={
     border:'none'
 
   },
-
-  largeScreenBrandDiv:{},
-  smallScreenBrandDiv:{},
-
-  fontStyle:{
-    fontFamily:'Courier',
+  smlViewP:{
+    fontFamily:'Oldtown',
     fontVariant: 'small-caps',
-    color: blueBlk
+    color: blueBlk,
+    fontSize:'1em',
+    marginLeft:'2%'
   }
+
+
 }
 
 const map = "https://www.google.com/maps/place/Woodside+Bike+Shop/@37.4561654,-122.2299071,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa384f074f6ad:0x5901b012d225ee78!8m2!3d37.4561654!4d-122.2277184"
@@ -136,14 +140,7 @@ class Header extends Component {
         <Icon size={style.iconSize} name="bicycle" style={{'marginLeft':'3%'}}/>
         <Link to='/' //className="pt-navbar-heading"
               style={{"marginLeft":"3%", 'display':'flex', 'alignItems':'center'}}>
-          <h4 style={{
-            //"width":"20vw",
-            ...styles.fontStyle,
-            'fontSize':style.textStyle.fontSize,
-            'marginTop':'3%',
-            //'alignSelf':'center'
-          }}
-          >
+          <h4 style={{...styles.fontStyle, ...style.textStyle}}>
             Woodside Bike Shop
           </h4>
         </Link>
@@ -236,8 +233,8 @@ class Header extends Component {
               <div style={{...styles.fontStyle, 'margin' :'2% 0% 0% 5%'}}>
                 <h4 >Woodside Bike Shop Hours</h4>
                 <div style={{'fontSize':'1.25em'}}>
-                  <p>Monday through Friday: 10am - 7pm</p>
-                  <p>Saturday and Sunday: 10am - 6pm</p>
+                  <p>Monday through Saturday: 10am - 6pm</p>
+                  <p>Sunday by Appointment</p>
                 </div>
               </div>
             </div>
@@ -304,12 +301,16 @@ class Header extends Component {
               <Menu>
                 {this.renderBikesAndServices()}
                 <Menu>
-                  <a href= {map} style={{...styles.fontStyle}}>
-                    <MenuItem text='Location'/>
+                  <a href= {map} style={{
+                    ...styles.fontStyle,
+                    //'fontSize':'1.25em'
+                    'marginTop':'2%'
+                  }}>
+                    <MenuItem style={{...styles.fontStyle}} text='Location'/>
                   </a>
                 </Menu>
 
-                <Menu text='Hours' style={{'fontSize':'1.5em'}}>
+                <Menu text='Hours' style={{'fontSize':'1.25em'}}>
                   <div style={{
                     'display':'flex',
                     'flexDirection':'column',
@@ -317,8 +318,8 @@ class Header extends Component {
                     'margin' :'2% 0% 0% 2%'
                   }}>
                     <p style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Hours</p>
-                    <p style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Mon-Fri: 10am-7pm</p>
-                    <p style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Sat-Sun: 10am-6pm</p>
+                    <p style={styles.smlViewP}>Mon-Sat: 10am-6pm</p>
+                    <p style={styles.smlViewP}>Sun by Appointment</p>
                   </div>
                 </Menu>
 

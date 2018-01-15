@@ -11,10 +11,11 @@ import Media from 'react-media'
 import services1 from '../images/bikeShopPics/services1.JPG'
 import services2 from '../images/bikeShopPics/services2.JPG'
 import services3 from '../images/bikeShopPics/services3.JPG'
-
+import tech1 from '../images/bikeShopPics/jonTech1.JPG'
+import tech2 from '../images/bikeShopPics/jonTech2.JPG'
 
 const fontStyle ={
-  fontFamily:'Courier',
+  fontFamily:'OldTown',
   fontVariant: 'small-caps',
 }
 
@@ -57,8 +58,11 @@ const styles = {
       maxWidth:'30vw'
     },
     imgStyle:{
+      //maxWidth:'100%',
+      // maxHeight:'55vh',
+      // borderRadius: '10%'
       maxWidth:'100%',
-      maxHeight:'55vh',
+      maxHeight:'350px',
       borderRadius: '10%'
     },
     imgP:{
@@ -121,9 +125,10 @@ const styles = {
 }
 
 const renderServiceRow=(style)=>{
-  const gearpics=[services2, services3, services1]
+  //const gearpics=[services2, services3, services1]
+  const gearpics=[tech2, tech1,services3, ]
   const servicetypes=['Repairs', 'Preventative Maintenance', 'Custom Builds']
-  const heading = [`Our Master Technicians `, 'can help with any service']
+  const heading = [`Jonathon Kieninger, our Master Technician, Can Help with Any Service`]
   return(
   <div style={style.mainDiv}>
     <div style={style.headingDiv}>
@@ -131,10 +136,10 @@ const renderServiceRow=(style)=>{
       >
         {heading[0]}
       </p>
-      <p style={{...fontStyle, ...style.headingP, ...style.headingPart2}}
-      >
-         {heading[1]}
-      </p>
+      {/*<p style={{...fontStyle, ...style.headingP, ...style.headingPart2}}*/}
+      {/*>*/}
+         {/*{heading[1]}*/}
+      {/*</p>*/}
 
     </div>
     <div style={style.imgsDivStyle}>

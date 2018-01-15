@@ -17,7 +17,7 @@ const viewStyle = {
 }
 
 const fontStyle ={
-  fontFamily:'Courier',
+  fontFamily:'OldTown',
   fontVariant: 'small-caps',
 }
 

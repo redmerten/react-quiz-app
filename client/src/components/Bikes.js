@@ -30,7 +30,7 @@ const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
 const fontStyle ={
-  fontFamily:'Courier',
+  fontFamily:'OldTown',
   fontVariant: 'small-caps',
   color: blueBlk
 }
@@ -96,6 +96,7 @@ const styles ={
     headingStyle:{
       gridColumn:'1/5',
       justifySelf:'center',
+      marginRight:'5%'
       //height:'20px'
     },
     pStyle:{
@@ -144,7 +145,7 @@ const renderBikeRow =(style)=>{
     <div style={style.viewStyle}>
       <div style={style.headingStyle}>
         <p style={{...fontStyle, ...style.pStyle}}>
-          We have bikes for every purpose and budget
+          We Have Bikes for Every Purpose and Budget
         </p>
       </div>
       <div

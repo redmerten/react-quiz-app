@@ -63,7 +63,7 @@ const styles= {
 }
 
 const fontStyle ={
-  fontFamily:'Courier',
+  fontFamily:'Oldtown',
   fontVariant: 'small-caps',
   color: blueBlk
 }

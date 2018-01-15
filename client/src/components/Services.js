@@ -4,6 +4,7 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Media from 'react-media'
 import {fetchServiceChart} from '../actions/index'
 import tech1 from '../images/bikeShopPics/jonTech1.JPG'
 import tech2 from '../images/bikeShopPics/jonTech2.JPG'
@@ -13,53 +14,32 @@ const orange = '#BB6558'
 const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
-const tableStyle = {
-  display:'grid',
-  gridTemplateColumns: 'repeat(4,1fr)',
-  gridTemplateRows: 'auto',
-  gridGap: '20px',
-  padding:"5px",
-  marginLeft:'40px',
-  marginRight:'390px',
-  fontSize:'1.2em',
-  }
-
-const headerStyle = {
-  display:'grid',
-  gridTemplateColumns: 'repeat(4,1fr)',
-  gridTemplateRows: 'auto',
-  gridGap: '20px',
-  padding:"5px",
-  marginLeft:'20px',
-  marginRight:'400px',
-  fontSize:'1.25em',
-  fontWeight: 'bold',
-  backgroundColor: lightBlue,
-  color: 'white'
-}
-
-const  gridHeader1Style={
-  gridColumn:'1/4',
-  marginLeft:'20px'
-}
-
-const  gridCol1Style={
-  gridColumn:'1/4',
-}
-
-const  gridCol2Style={
-  gridColumn:'4/5',
-  marginLeft: "60px",
-  //marginLeft:'20px',
-  marginRight:'400px',
-  }
-
-
 const styles ={
+  fontStyle:{
+    fontFamily:'Oldtown',
+    fontVariant: 'small-caps',
+    color: blueBlk
+  },
+
   lgView:{
+    mainDiv:{
+      padding: '80px 60px 50px 80px'
+    },
+    master:{
+      marginLeft:'10%',
+      marginBottom:'5%'
+    },
+    masterSize:{
+      fontSize:'3em'
+    },
+    masterNext:{
+      fontSize:'2.5em'
+    },
     topDiv:{
       display:'flex',
-      justifyContent:'space-evenly'
+      justifyContent:'space-between',
+      //alignItems:'center',
+      margin:'0% 20% 5% 10%'
     },
     titlePriceDiv:{
       display:'flex',
@@ -71,24 +51,115 @@ const styles ={
     },
     tuneups:{
       display:'flex',
-      flexDirection:'column'
+      flexDirection:'column',
+      justifyContent:'space-evenly'
     },
     aTuneup:{
       display: 'flex',
       flexDirection:'column',
-      marginBottom:'40px'
+      marginBottom:'20px'
     },
     imgDiv:{
-      width:'40%',
+      //marginTop:'10px',
+      width:'50%',
     },
     img:{
       maxWidth:'100%'
+    },
+    table:{
+      display:'grid',
+      gridTemplateColumns:'3fr 5fr 5fr',
+      gridColumnGap:'5%',
+      justifyItems:'start',
+      width:'90%',
+      margin:'0% 10%'
+    },
+    serviceCol:{
+      gridColumn:'1/2'
+    },
+    pCol:{
+      gridColumn:'2/3'
+    },
+    tableImgDiv:{
+      gridColumn:'3/4',
+      //width:'20%'
+    },
+    tableImg:{
+      maxWidth:'100%',
+      gridColumn:'3/4',
     }
   },
 
-  smView:{
-
-  }
+  smlView:{
+    mainDiv:{
+      paddingTop: '80px'
+    },
+    master:{
+      margin:'0% 8% 5% 5%',
+      display:'flex',
+      flexDirection:'column',
+      justifyContent:'center',
+      //alignItems:'center',
+    },
+    masterSize:{
+      fontSize:'2em'
+    },
+    masterNext:{
+      fontSize:'1.5em'
+    },
+    topDiv:{
+      display:'flex',
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems: 'center',
+      margin:'0% 2% 5% 2%'
+    },
+    titlePriceDiv:{
+      display:'flex',
+      //marginBottom:'20px',
+    },
+    price:{
+      marginLeft:'20px'
+    },
+    tuneups:{
+      display:'flex',
+      flexDirection:'column',
+      justifyContent:'space-evenly'
+    },
+    aTuneup:{
+      display: 'flex',
+      flexDirection:'column',
+      marginBottom:'20px'
+    },
+    imgDiv:{
+      width:'100%',
+    },
+    img:{
+      maxWidth:'100%'
+    },
+    table:{
+      display:'grid',
+      gridTemplateColumns:'1fr 1fr',
+      gridColumnGap:'5%',
+      justifyItems:'start',
+      width:'90%',
+      margin:'0% 5%'
+    },
+    serviceCol:{
+      gridColumn:'1/2'
+    },
+    pCol:{
+      gridColumn:'2/3'
+    },
+    tableImgDiv:{
+      gridColumn:'3/4',
+      //width:'20%'
+    },
+    tableImg:{
+      maxWidth:'100%',
+      gridColumn:'3/4',
+    }
+  },
 }
 
 
@@ -122,31 +193,25 @@ const tuneUps =[
         this.props.fetchServiceChart()
       }
 
-      renderChartHeader(){
+      renderChartHeader(style){
         return(
           <div>
-            <div style={headerStyle} >
-              <div style={gridHeader1Style}>Service Type and Price Range</div>
-              <div style={gridCol2Style}>Charge</div>
-              {/*<div style={gridCol3Style}>$65</div>*/}
-              {/*<div style={gridCol4Style}>$99</div>*/}
-              {/*<div style={gridHeader5Style}>$199</div>*/}
+            <div style={style.table} >
+              <h4 style={style.serviceCol}>Service Menu</h4>
+              <h4 style={style.pCol}>Price</h4>
             </div>
           </div>
         )
       }
 
-      renderServiceChart(){
+      renderServiceChart(style){
         return (
           <div style={{'maxHeight':'400px', 'overflow':'auto'}}>
-            {this.props.serviceChart.map((s, i) => {
+            {this.props.serviceChart.map((s,i) => {
               return (
-                <div style={tableStyle}>
-                  <div style={gridCol1Style}>{s.Type}</div>
-                  <div style={gridCol2Style}>{s.Charge}</div>
-                  {/*<div style={gridCol3Style}>{s.$65}</div>*/}
-                  {/*<div style={gridCol4Style}>{s.$99}</div>*/}
-                  {/*<div style={gridCol5Style}>{s.$199}</div>*/}
+                <div key={i} style={style.table}>
+                    <p style={style.serviceCol}>{s.Service}</p>
+                    <p style={style.pCol}>{s.Price}</p>
                 </div>
               )
             })
@@ -155,41 +220,71 @@ const tuneUps =[
         )
       }
 
-
-      render(){
+      renderServices(style){
         console.log('serviceChart', this.props.serviceChart)
         return(
-          <div style={{'padding':'80px 60px 50px 80px'}}>
-            <div style={styles.lgView.topDiv}>
-              <div style={styles.lgView.tuneups}>
+          <div style={style.mainDiv}>
+            <div style={style.master}>
+              <p style={{...styles.fontStyle, ...style.masterSize}}>Master Technician</p>
+              <p style={{...styles.fontStyle, ...style.masterNext}}>
+                Woodside Bike Shop's Service Center is Led by Jonathan Kieninger
+              </p>
+            </div>
+            <div style={style.topDiv}>
+              <div style={style.tuneups}>
                 {tuneUps.map((t, i)=>{
                   return(
-                    <div style={styles.lgView.aTuneup}>
+                    <div key={i} style={style.aTuneup}>
 
-                      <div style={styles.lgView.titlePriceDiv}>
+                      <div style={style.titlePriceDiv}>
                         <h5>{t.title}</h5>
-                        <h5 style={styles.lgView.price}>{t.price}</h5>
+                        <h5 style={style.price}>{t.price}</h5>
                       </div>
                       {t.includes.map((t,i)=>{
                         return(
-                          <p>{t}</p>
+                          <p key={i}>{t}</p>
                         )
                       })}
                     </div>
                   )
                 })}
               </div>
-              <div style={styles.lgView.imgDiv}>
-                <img src={tech1} style={styles.lgView.img}/>
+              <div style={style.imgDiv}>
+                <img src={tech2} style={style.img}/>
               </div>
             </div>
             <div>
-              {Array.isArray(this.props.serviceChart) ? this.renderChartHeader() : <div/>}
-              {Array.isArray(this.props.serviceChart) ? this.renderServiceChart() : <div/>}
+              {Array.isArray(this.props.serviceChart) ? this.renderChartHeader(style) : <div/>}
+              {Array.isArray(this.props.serviceChart) ? this.renderServiceChart(style) : <div/>}
             </div>
           </div>
         )
+
       }
+
+      render(){
+        return(
+          <div >
+            <Media query= '(max-width: 812px)'>
+              {matches => {
+                console.log('matches', matches)
+                return(
+                  matches ? (
+                    this.renderServices(styles.smlView)
+                  ):(
+                    this.renderServices(styles.lgView)
+                  )
+                )
+              }
+              }
+            </Media>
+          </div>
+        )
+      }
+
+
+
+
 
 }
 
