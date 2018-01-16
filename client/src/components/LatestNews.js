@@ -41,7 +41,7 @@ const buttonStyle ={
   textAlign: 'center',
   textDecoration: 'none',
   //display: inline-block,
-  fontSize: '2em',
+  //fontSize: '2em',
   width:'175px'
 
 }
@@ -90,6 +90,9 @@ const styles ={
     contentStyle:{
       fontSize:'1.25em',
       marginTop:'2%'
+    },
+    buttonFontSize:{
+      fontSize:'150%'
     }
 
   },
@@ -108,7 +111,7 @@ const styles ={
       marginBottom: '0px'
     },
     headerP:{
-      fontSize:'2.5em',
+      fontSize:'150%',
       color: blueBlk,
       marginTop:'0%'
     },
@@ -139,7 +142,11 @@ const styles ={
     contentStyle:{
       fontSize:'1.25em',
       marginTop:'1%'
+    },
+    buttonFontSize:{
+      fontSize:'150%'
     }
+
   }
 }
 
@@ -180,7 +187,7 @@ class LatestNews extends Component{
                   to={`/detail/${b.id}`}
                 >
                   <button
-                    style={{...buttonStyle, ...fontStyle}}
+                    style={{...buttonStyle, ...fontStyle, ...style.buttonFontSize}}
                   >Read More</button>
                 </Link>
               </div>

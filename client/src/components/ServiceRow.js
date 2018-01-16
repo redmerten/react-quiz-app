@@ -94,9 +94,9 @@ const styles = {
       margin:'3% '
     },
     headingP:{
-      fontSize:'1.5em',
+      fontSize:'150%',
       color: blueBlk,
-      //'margin':'auto',
+      marginTop:'2%',
       alignSelf:'center'
     },
     imgsDivStyle:{
@@ -119,7 +119,7 @@ const styles = {
       borderRadius: '10%'
     },
     imgP:{
-      fontSize:'1.5em',
+      fontSize:'125%',
       marginTop:'2%',
       marginBottom:'10%'
     }

@@ -96,7 +96,7 @@ const styles = {
       marginTop:'3%'
     },
     headingP:{
-      'fontSize':'175%',
+      'fontSize':'150%',
       'color': blueBlk,
       'margin':'0% 8%',
       'alignSelf':'center'
@@ -121,7 +121,7 @@ const styles = {
       borderRadius: '50%'
     },
     imgP:{
-      fontSize:'150%',
+      fontSize:'125%',
       marginTop:'2%',
       marginBottom:'10%'
     }

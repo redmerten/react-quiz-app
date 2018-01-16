@@ -100,11 +100,12 @@ const styles ={
     headingStyle:{
       gridColumn:'1/5',
       justifySelf:'center',
-      marginRight:'5%'
+      margin:'0% 5%',
+      width:'85%',
       //height:'20px'
     },
     pStyle:{
-      fontSize:'125%',
+      fontSize:'150%',
       color: blueBlk,
       marginTop:'2%'
     },

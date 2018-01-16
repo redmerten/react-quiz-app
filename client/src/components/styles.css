@@ -13,10 +13,14 @@ a.pt-menu-item {
 .pt-menu-item {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #1A3256;
-  font-size: 1.25em;
+  font-size: 125%;
   /*font-variant: small-caps;*/
 }
 
 .pt-dialog-header h5 {
-  font-size: 1.5em;
+  font-size: 150%;
+}
+
+.pt-navbar{
+  padding:0
 }

@@ -64,22 +64,26 @@ const styles ={
   },
   navSmlBrandDiv:{
     div:{
-      flexGrow:'3',
+      flexGrow:'5',
       display:'flex' ,
       justifyContent: 'center',
       alignItems:'center',
     },
     iconSize:'2x',
     textStyle:{
-      fontSize:'125%',
+      fontSize:'150%',
       marginTop:'5%',
     },
+    textDiv:{
+      flexGrow:'4'
+    },
     brandTextStyle:{
-      fontSize:'150%',
+      fontSize:'125%',
       marginTop:'5%',
       fontFamily:'Oldtime',
       fontVariant: 'small-caps',
-      color:blueBlk
+      color:blueBlk,
+      //flexGrow:'4'
     },
   },
 
@@ -102,9 +106,24 @@ const styles ={
     color: blueBlk,
     fontSize:'100%',
     marginLeft:'2%'
+  },
+
+  lgView:{
+    contactUsDiv:{
+      marginRight:'2%',
+      flexGrow:'.65',
+      display:'flex' ,
+      justifyContent: 'flex-end'
+    }
+  },
+  smlView:{
+    contactUsDiv:{
+      marginRight:'2%',
+      flexGrow:1,
+      display:'flex' ,
+      justifyContent: 'flex-end'
+    }
   }
-
-
 }
 
 const map = "https://www.google.com/maps/place/Woodside+Bike+Shop/@37.4561654,-122.2299071,17z/data=!3m1!4b1!4m5!3m4!1s0x808fa384f074f6ad:0x5901b012d225ee78!8m2!3d37.4561654!4d-122.2277184"
@@ -212,13 +231,10 @@ class Header extends Component {
     )
   }
 
-  renderContactUs=()=>{
+  renderContactUs=(style)=>{
     return(
       <div
-        style={{
-          'marginRight':'2%', 'flexGrow':'.65', 'display':'flex' , 'justifyContent': 'flex-end',
-          //'alignItems':'center'
-        }}
+        style={style.contactUsDiv}
       >
         <Popover
           content={this.renderContact()}
@@ -315,7 +331,7 @@ class Header extends Component {
       <nav className="pt-navbar pt-fixed-top "
            style={styles.navStyle}>
         <div style={{
-          "marginLeft": "2.5%",
+          "marginLeft": "1%",
           'flexGrow':'1'
         }}
         >
@@ -366,7 +382,7 @@ class Header extends Component {
 
         </div>
         {this.renderBrandDiv(styles.navSmlBrandDiv)}
-        {this.renderContactUs()}
+        {this.renderContactUs(styles.smlView)}
       </nav>
     )
   }
@@ -379,7 +395,7 @@ class Header extends Component {
       >
         {this.renderBrandDiv(styles.navLgBrandDiv)}
         {this.renderLargeNavItems()}
-        {this.renderContactUs()}
+        {this.renderContactUs(styles.lgView)}
 
       </nav>
     )

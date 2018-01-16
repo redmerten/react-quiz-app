@@ -46,7 +46,7 @@ const styles= {
       display:'flex',
       flexDirection:'column',
       justifyContent:'space-between',
-      margin:'5% 2% 0% 2%',
+      margin:'8% 2% 0% 2%',
       //height: '375px',
     },
     fontSize:'150%',
@@ -56,7 +56,7 @@ const styles= {
     },
     justifyContent:'center',
     sideMargins:{
-      margin: '5% 5%'
+      margin: '8% 3% 3% 3%'
     }
 
   }

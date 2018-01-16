@@ -39,7 +39,7 @@ const styles={
     },
     animatedWordsDiv:{
       position:'absolute',
-      top:'80px',
+      top:'90px',
       right:'5%'
       //top:'18%',
       //right:'8%'
