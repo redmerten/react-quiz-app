@@ -33,7 +33,7 @@ const styles= {
       margin:'0% 8% 0% 12%',
       height: '80vh',
     },
-    fontSize:'2em',
+    fontSize:'150%',
     pic: {
       maxHeight:'20vh',
       borderRadius:'50%'
@@ -46,17 +46,17 @@ const styles= {
       display:'flex',
       flexDirection:'column',
       justifyContent:'space-between',
-      margin:'0% 2% 0% 2%',
+      margin:'5% 2% 0% 2%',
       //height: '375px',
     },
-    fontSize:'1em',
+    fontSize:'150%',
     pic: {
-      maxHeight:'15vh',
+      maxHeight:'50vh',
       borderRadius:'50%'
     },
     justifyContent:'center',
     sideMargins:{
-      margin: '5% 5% 5% 5%'
+      margin: '5% 10% '
     }
 
   }
@@ -66,10 +66,6 @@ const fontStyle ={
   fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
   //fontVariant: 'small-caps',
   color: blueBlk
-}
-
-const lgIntroStyle={
-  fontSize:'2em'
 }
 
 const renderIntro=(style)=>{

@@ -42,16 +42,23 @@ const styles ={
   },
   navLgBrandDiv: {
     div:{
-      flexGrow:'1',
+      flexGrow:'2',
       display:'flex' ,
       justifyContent: 'flex-start',
       alignItems:'center',
       marginLeft:"1%"
     },
-    iconSize:'3x',
+    iconSize:'2x',
     textStyle:{
-      fontSize:'1.75em',
+      fontSize:'125%',
       marginTop:'3%',
+    },
+    brandTextStyle:{
+      fontSize:'140%',
+      marginTop:'5%',
+      fontFamily:'Oldtime',
+      fontVariant: 'small-caps',
+      color:blueBlk
     },
 
   },
@@ -64,9 +71,25 @@ const styles ={
     },
     iconSize:'2x',
     textStyle:{
-      fontSize:'1.35em',
+      fontSize:'125%',
       marginTop:'5%',
     },
+    brandTextStyle:{
+      fontSize:'150%',
+      marginTop:'5%',
+      fontFamily:'Oldtime',
+      fontVariant: 'small-caps',
+      color:blueBlk
+    },
+  },
+
+  lgNavMenu:{
+    buttons:{
+      fontSize:'100%',
+      fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+      //fontVariant: 'small-caps',
+      color: blueBlk
+    }
   },
 
   burgerButton:{
@@ -75,9 +98,9 @@ const styles ={
   },
   smlViewP:{
     fontFamily:'Helvetica Neue,Helvetica,Arial,sans-serif',
-    fontVariant: 'small-caps',
+    //fontVariant: 'small-caps',
     color: blueBlk,
-    fontSize:'1em',
+    fontSize:'100%',
     marginLeft:'2%'
   }
 
@@ -137,12 +160,12 @@ class Header extends Component {
       <div
         style={style.div}
       >
-        <Icon size={style.iconSize} name="bicycle" style={{'marginLeft':'3%'}}/>
+        <Icon size={style.iconSize} name="bicycle" style={{'marginLeft':'2%'}}/>
         <Link to='/' //className="pt-navbar-heading"
               style={{"marginLeft":"3%", 'display':'flex', 'alignItems':'center'}}>
-          <h4 style={{'fontFamily':'Oldtime', ...style.textStyle}}>
+          <p style={style.brandTextStyle}>
             Woodside Bike Shop
-          </h4>
+          </p>
         </Link>
       </div>
     )
@@ -150,7 +173,7 @@ class Header extends Component {
 
   renderLargeNavItems=()=>{
     return(
-      <div style={{'flexGrow':'2.5','display': 'flex',
+      <div style={{'flexGrow':'2.75','display': 'flex',
         'justifyContent': 'space-evenly', ...styles.fontStyle}}>
         <Popover
           //content={popOverMenu(bikeBrands)}
@@ -160,7 +183,7 @@ class Header extends Component {
         >
           <button
             className="pt-button pt-minimal"
-            style={{...styles.fontStyle, 'fontSize':'1.25em'}}
+            style={styles.lgNavMenu.buttons}
           >
             Bikes and Services
           </button>
@@ -172,7 +195,7 @@ class Header extends Component {
         >
           <button
             className="pt-button pt-minimal"
-            style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Location and Hours</button>
+            style={styles.lgNavMenu.buttons}>Location and Hours</button>
         </Popover>
 
         <Popover
@@ -183,7 +206,7 @@ class Header extends Component {
         >
           <button
             className="pt-button pt-minimal"
-            style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Local Biking Info </button>
+            style={styles.lgNavMenu.buttons}>Local Biking Info </button>
         </Popover>
       </div>
     )
@@ -193,7 +216,7 @@ class Header extends Component {
     return(
       <div
         style={{
-          'marginRight':'3%', 'flexGrow':'1', 'display':'flex' , 'justifyContent': 'flex-end',
+          'marginRight':'2%', 'flexGrow':'.65', 'display':'flex' , 'justifyContent': 'flex-end',
           //'alignItems':'center'
         }}
       >
@@ -205,7 +228,7 @@ class Header extends Component {
         >
           <button
              className="pt-button pt-minimal"
-             style={{...styles.fontStyle,'fontSize':'1.25em'}}>
+             style={styles.lgNavMenu.buttons}>
             Contact Us
           </button>
         </Popover>
@@ -221,7 +244,7 @@ class Header extends Component {
         <a href= {map} style={{...styles.fontStyle}}>
           <MenuItem text='Location'/>
         </a>
-          <MenuItem text='Hours' style={{'fontSize':'1.5em'}}>
+          <MenuItem text='Hours' style={{'fontSize':'125%'}}>
             <div style={{
               'display':'flex',
               'flexDirection':'column',
@@ -232,7 +255,7 @@ class Header extends Component {
 
               <div style={{...styles.fontStyle, 'margin' :'2% 0% 0% 5%'}}>
                 <h4 >Woodside Bike Shop Hours</h4>
-                <div style={{'fontSize':'1.25em'}}>
+                <div style={{'fontSize':'125%'}}>
                   <p>Monday through Saturday: 10am - 6pm</p>
                   <p>Sunday by Appointment</p>
                 </div>
@@ -251,11 +274,11 @@ class Header extends Component {
       >
         <a
           href="tel:6502991071"
-          style={{...styles.fontStyle, 'fontSize':'1em'}}
+          style={{...styles.fontStyle, 'fontSize':'100%'}}
         >
           <MenuItem className="pt-button pt-minimal pt-icon-mobile-phone" text='Call'/>
         </a>
-        <a href="mailto:woodsidemechanic@gmail.com" style={{...styles.fontStyle, 'fontSize':'1em'}}>
+        <a href="mailto:woodsidemechanic@gmail.com" style={{...styles.fontStyle, 'fontSize':'100%'}}>
           <MenuItem className="pt-button pt-minimal pt-icon-envelope" text='Email'/>
         </a>
       </Menu>
@@ -273,7 +296,7 @@ class Header extends Component {
         >
           <button
             className="pt-button pt-minimal"
-            style={{...styles.fontStyle, 'fontSize':'1.25em'}}
+            style={{...styles.fontStyle, 'fontSize':'125%'}}
           >
             Bikes
           </button>
@@ -310,14 +333,14 @@ class Header extends Component {
                   </a>
                 </Menu>
 
-                <Menu text='Hours' style={{'fontSize':'1.25em'}}>
+                <Menu text='Hours' style={{'fontSize':'125%'}}>
                   <div style={{
                     'display':'flex',
                     'flexDirection':'column',
                     'width':'250px',
                     'margin' :'2% 0% 0% 2%'
                   }}>
-                    <p style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Hours</p>
+                    <p style={{...styles.fontStyle, 'fontSize':'125%'}}>Hours</p>
                     <p style={styles.smlViewP}>Mon-Sat: 10am-6pm</p>
                     <p style={styles.smlViewP}>Sun by Appointment</p>
                   </div>
@@ -331,7 +354,7 @@ class Header extends Component {
                 >
                   <button
                     className="pt-button pt-minimal"
-                    style={{...styles.fontStyle, 'fontSize':'1.25em'}}>Local Biking Info </button>
+                    style={{...styles.fontStyle, 'fontSize':'125%'}}>Local Biking Info </button>
                 </Popover>
               </Menu>
             }
