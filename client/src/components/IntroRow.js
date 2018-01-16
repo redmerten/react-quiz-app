@@ -51,12 +51,12 @@ const styles= {
     },
     fontSize:'150%',
     pic: {
-      maxHeight:'50vh',
+      maxHeight:'25vh',
       borderRadius:'50%'
     },
     justifyContent:'center',
     sideMargins:{
-      margin: '5% 10% '
+      margin: '5% 5%'
     }
 
   }

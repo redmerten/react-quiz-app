@@ -50,19 +50,21 @@ const styles ={
       height:'15vh'
     },
     pStyle:{
-      fontSize:'150%',
+      fontSize:'200%',
       color: blueBlk,
-      marginTop:'2%'
+      marginTop:'5%'
     },
     imgGridDiv:{
       gridColumn:'1/5',
-      height:'65vh'
+      height:'65vh',
+      margin:'0% 3%'
     },
     imgsFlexDiv:{
       display:'flex',
       flexDirection:'row',
       flexWrap:'wrap',
-      justifyContent:'space-evenly'
+      justifyContent:'space-evenly',
+
     },
     imgTypeDiv:{
       display:'flex',
@@ -70,17 +72,18 @@ const styles ={
       justifyContent:'center',
       alignItems:'center',
       width:'23vw',
-      marginBottom:'2%'
+      height: '23vh',
+      marginBottom:'5%'
     },
     imgStyle:{
       borderRadius:'50%',
-      maxHeight:'22vh',
-      maxWidth:'22vw',
+      maxHeight:'20vh',
+      maxWidth:'100%',
       marginTop:'2%',
       overflow:'hidden'
     },
     bikeTypeStyle:{
-      marginTop:'2%',
+      marginTop:'3%',
       ...fontStyle,
       fontSize: '125%'
     }

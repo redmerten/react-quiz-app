@@ -43,7 +43,7 @@ const styles = {
       alignItems:'center'
     },
     headingP:{
-      'fontSize':'2.5em',
+      'fontSize':'200%',
       'color': blueBlk,
     },
     headingPart2:{
@@ -52,14 +52,15 @@ const styles = {
     imgsDivStyle:{
       display:'flex',
       justifyContent:'space-evenly',
+      alignItems:'center',
       maxHeight:'65vh',
-      margin: '0% 0% 0% 0%'
+      margin: '2% 0% 0% 0%'
     },
     imgServDiv:{
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
-      maxWidth:'30vw',
+      maxWidth:'28vw',
       marginBottom: '5%'
     },
     imgStyle:{
@@ -68,8 +69,8 @@ const styles = {
       borderRadius: '50%'
     },
     imgP:{
-      fontSize:'2em',
-      marginTop:'2%',
+      fontSize:'175%',
+      marginTop:'3%',
       marginBottom:'10%'
 
     }
@@ -95,7 +96,7 @@ const styles = {
       marginTop:'3%'
     },
     headingP:{
-      'fontSize':'1.75em',
+      'fontSize':'175%',
       'color': blueBlk,
       'margin':'0% 8%',
       'alignSelf':'center'
@@ -120,7 +121,7 @@ const styles = {
       borderRadius: '50%'
     },
     imgP:{
-      fontSize:'1.5em',
+      fontSize:'150%',
       marginTop:'2%',
       marginBottom:'10%'
     }

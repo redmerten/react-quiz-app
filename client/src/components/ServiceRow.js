@@ -39,7 +39,7 @@ const styles = {
 
     },
     headingP:{
-      fontSize:'150%',
+      fontSize:'200%',
       color: blueBlk,
       margin: '0% 5%'
     },
@@ -51,13 +51,13 @@ const styles = {
       justifyContent:'space-evenly',
       maxHeight:'65vh',
       marginTop: '2%',
-      marginBottom:'5%%'
+      marginBottom:'5%'
     },
     imgServDiv:{
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
-      maxWidth:'30vw',
+      maxWidth:'40vw',
 
     },
     imgStyle:{
@@ -65,11 +65,11 @@ const styles = {
       // maxHeight:'55vh',
       // borderRadius: '10%'
       maxWidth:'100%',
-      maxHeight:'50vh',
+      //maxHeight:'26vh',
       borderRadius: '10%'
     },
     imgP:{
-      fontSize:'2em',
+      fontSize:'175%',
       margin:'2% 10% 0% 10%'
     }
 
@@ -129,9 +129,9 @@ const styles = {
 
 const renderServiceRow=(style)=>{
   //const gearpics=[services2, services3, services1]
-  const gearpics=[tech2, tech1,services3, ]
-  const servicetypes=['Repairs', 'Maintenance', 'Custom Builds']
-  const heading = [`Jonathon Kieninger, our Master Technician, Can Help with Any Service`]
+  const gearpics=[tech2, tech1, ]
+  const servicetypes=['Maintenance & Repairs','Custom Builds']
+  const heading = [`Jonathon Kieninger, our Lead Technician, Can Help with Any Service`]
   return(
   <div style={style.mainDiv}>
     <div style={style.headingDiv}>

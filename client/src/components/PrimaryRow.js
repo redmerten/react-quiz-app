@@ -81,7 +81,7 @@ const renderSmlScreen=()=>{
              //'height' :'auto',
              'height':'375px'
            }}/>
-      <div style={{'position':'absolute',  'top':'80px', 'right':'5%' }}>
+      <div style={{'position':'absolute',  'top':'85px', 'right':'5%' }}>
         <ScrollAnimation animateIn='zoomIn' offset={0}>
           <div style={{'display':'flex', 'flexDirection':'column', 'justifyContent':'center', 'alignItems':'center'}}>
             <p style={{...fontStyle, 'color':blueBlk, 'fontSize':'120%'}}>Ready</p>
