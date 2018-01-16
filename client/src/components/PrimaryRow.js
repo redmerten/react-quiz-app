@@ -35,7 +35,9 @@ const styles={
     },
     img:{
       flexGrow:'1',
-      height:'100%'
+      width:'100%',
+      height:'90vh',
+      overflow:'hidden'
     },
     animatedWordsDiv:{
       position:'absolute',
@@ -70,16 +72,18 @@ const renderSmlScreen=()=>{
   return(
     <div style={{
       'display':'flex',
-      'justifyContent':'center',
+      'justifyContent':'stretch',
       'alignItems':'stretch',
-      'height':'375px',
-      'paddingTop':'40px'
+      //'height':'90%',
+      'paddingTop':'40px',
+
     }}>
       <img src={wideShopSign} alt=""
            style={{
-             'width':'100%',
-             //'height' :'auto',
-             'height':'375px'
+             'maxWidth':'100%',
+             'height' :'375px',
+             //'height':'375px',
+             //'overflow':'hidden'
            }}/>
       <div style={{'position':'absolute',  'top':'85px', 'right':'5%' }}>
         <ScrollAnimation animateIn='zoomIn' offset={0}>
@@ -97,7 +101,7 @@ const renderSmlScreen=()=>{
 
 const primaryRow = () =>{
   return(
-    <div>
+    <div style={{'backgroundColor':lightBlue}}>
       <Media query= '(max-width: 812px)'>
         {matches => {
           console.log('matches', matches)

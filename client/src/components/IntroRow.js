@@ -17,12 +17,20 @@ const orange = '#BB6558'
 const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
+const fontStyle ={
+  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  //fontVariant: 'small-caps',
+  color: blueBlk
+}
+
+
 const styles= {
   lgViewStyle: {
     height: '80vh',
-    width: '100%',
+    width: '100vw',
     display: 'grid',
-    gridTemplateColumns: 'repeat(6,1fr)'
+    gridTemplateColumns: 'repeat(2,1fr)',
+    //gridTemplateColumns: 'repeat(6,1fr)',
   },
 
   lgIntroView:{
@@ -30,43 +38,61 @@ const styles= {
       display:'flex',
       flexDirection:'column',
       justifyContent:'space-evenly',
-      margin:'0% 8% 0% 12%',
+      margin:'0% 0% ',
       height: '80vh',
     },
-    fontSize:'150%',
+
+    imgWordsDiv:{
+      display:'flex',
+      flexDirection:'row',
+      //...style.justifyContent,
+      justifyContent:'space-between',
+      alignItems:'center',
+      margin: '3% 10% 3% 5%'
+    },
     pic: {
       maxHeight:'20vh',
       borderRadius:'50%'
     },
-    justifyContent:'space-between'
+    justifyContent:'space-between',
+    p:{
+      ...fontStyle,
+      fontSize:'200%',
+      marginRight:'1%'
+    }
   },
 
   smlIntroView:{
     div:{
       display:'flex',
       flexDirection:'column',
-      justifyContent:'space-between',
-      margin:'8% 2% 0% 2%',
+      justifyContent:'space-evenly',
+      //margin:'2% 0%',
       //height: '375px',
     },
-    fontSize:'150%',
+
+    imgWordsDiv:{
+      display:'flex',
+      flexDirection:'row',
+      //...style.justifyContent,
+      justifyContent:'space-between',
+      alignItems:'center',
+      margin: '3% 4%'
+    },
     pic: {
-      maxHeight:'25vh',
+      maxHeight:'20vh',
       borderRadius:'50%'
     },
     justifyContent:'center',
-    sideMargins:{
-      margin: '8% 3% 3% 3%'
+    p:{
+      ...fontStyle,
+      fontSize:'125%',
+      marginRight:'2%'
     }
 
   }
 }
 
-const fontStyle ={
-  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
-  //fontVariant: 'small-caps',
-  color: blueBlk
-}
 
 const renderIntro=(style)=>{
   const better=[
@@ -80,18 +106,11 @@ const renderIntro=(style)=>{
         {better.map((e,i)=> {
           return(
             <div key={i}
-                 style={{
-                    'display':'flex',
-                    'flexDirection':'row',
-                   //...style.justifyContent,
-                    'justifyContent':'space-between',
-                    'alignItems':'center',
-                   ...style.sideMargins
-            }}>
+                 style={style.imgWordsDiv}>
               <ScrollAnimation key={i}
                                animateIn='zoomIn'
               >
-                <p style={{...fontStyle, 'fontSize':style.fontSize}}>{e}</p>
+                <p style={style.p}>{e}</p>
               </ScrollAnimation>
               <ScrollAnimation
                 animateIn="slideInRight"
@@ -110,11 +129,11 @@ const renderIntro=(style)=>{
 const renderLgScreen=()=>{
   return(
     <div style={{'backgroundColor':lightBlue, ...styles.lgViewStyle}}>
-      <div style={{'gridColumn':'1/4', }}>
+      <div style={{'gridColumn':'1/2', }}>
         <img src={storefront1} alt=""
              style={{'height':'80vh', 'maxWidth':'100%','overflow':'hidden'}}/>
       </div>
-      <div style={{'gridColumn':'4/7'}}>
+      <div style={{'gridColumn':'2/3'}}>
         {renderIntro(styles.lgIntroView)}
       </div>
     </div>
