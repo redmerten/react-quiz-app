@@ -11,10 +11,10 @@ import Media from 'react-media'
 import wideShopSign from '../images/bikeShopPics/wideshopsign.JPG'
 
 
-const viewStyle = {
-  height:'80vh',
-  width:'100vw'
-}
+// const viewStyle = {
+//   height:'80vh',
+//   width:'100vw'
+// }
 const lightBlue='#52A0F5'
 const orange = '#BB6558'
 const darkBlue = '#0073C4'
@@ -96,7 +96,7 @@ const renderSmlScreen=()=>{
     }}>
       <img src={wideShopSign} alt=""
            style={{
-             'maxWidth':'100%',
+             'width':'100%',
              'height' :'375px',
              //'height':'375px',
              //'overflow':'hidden'
