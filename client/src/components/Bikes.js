@@ -139,7 +139,8 @@ const styles ={
       justifyContent:'center',
       alignItems:'center',
       width:'40%',
-      marginBottom:'2%'
+      marginBottom:'2%',
+      webkitFlexBasis:'100%'
     },
     imgStyle:{
       borderRadius:'50%',
