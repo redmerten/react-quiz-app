@@ -5,7 +5,8 @@ import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 import Media from 'react-media'
-
+//import {css} from 'glamor'
+import './styles.css'
 
 import storefront1 from '../images/bikeShopPics/storefront1.JPG'
 import services3 from '../images/bikeShopPics/services3.JPG'
@@ -23,6 +24,9 @@ const fontStyle ={
   color: blueBlk
 }
 
+// const zoomIn = css({
+//   flexGrow:'2'
+// })
 
 const styles= {
   lgViewStyle: {
@@ -81,13 +85,15 @@ const styles= {
     },
     pic: {
       maxHeight:'20vh',
-      borderRadius:'50%'
+      borderRadius:'50%',
+      flexGrow:'1'
     },
     justifyContent:'center',
     p:{
       ...fontStyle,
       fontSize:'125%',
-      marginRight:'2%'
+      marginRight:'2%',
+      flexGrow: '2'
     }
 
   }
@@ -109,6 +115,7 @@ const renderIntro=(style)=>{
                  style={style.imgWordsDiv}>
               <ScrollAnimation key={i}
                                animateIn='zoomIn'
+                               style={{'flexGrow':'2'}}
               >
                 <p style={style.p}>{e}</p>
               </ScrollAnimation>

@@ -14,6 +14,7 @@
     "@blueprintjs/core": "^1.29.0",
     "animate.css": "^3.5.2",
     "axios": "^0.16.2",
+    "glamor": "^2.20.40",
     "grommet": "^1.8.0",
     "grommet-cli": "^5.1.2",
     "lodash": "^4.17.4",

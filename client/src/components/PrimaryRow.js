@@ -22,8 +22,9 @@ const blueBlk='#1A3256'
 
 
 const fontStyle ={
-  fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
-  //fontVariant: 'small-caps',
+  //fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
+  fontFamily:'Oldtown',
+  fontVariant: 'small-caps',
   color: blueBlk
 }
 
@@ -42,13 +43,24 @@ const styles={
     animatedWordsDiv:{
       position:'absolute',
       top:'90px',
-      right:'5%'
+      right:'10%'
       //top:'18%',
       //right:'8%'
     },
-    words:{
-      fontSize:'150%'
+
+    wordsDiv:{
+      //'display':'flex', 'flexDirection':'column', 'justifyContent':'center', 'alignItems':'center'
+      display:'flex',
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center',
+    },
+    pStyle:{
+      ...fontStyle,
+      color:blueBlk,
+      fontSize:'200%'
     }
+
   },
   smlScreen:{
 
@@ -62,7 +74,11 @@ const renderLgScreen=(style)=>{
          style={style.img}/>
     <div style={style.animatedWordsDiv}>
       <ScrollAnimation animateIn='zoomIn' offset={0}>
-        <p style={{...fontStyle, ...style.words}}>Passion for Riding</p>
+        <div style={style.wordsDiv}>
+        <p style={style.pStyle}>Ready</p>
+        <p style={style.pStyle}>to</p>
+        <p style={style.pStyle}>Ride?</p>
+        </div>
       </ScrollAnimation>
     </div>
   </div>

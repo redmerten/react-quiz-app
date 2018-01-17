@@ -40,30 +40,36 @@ const styles ={
     viewStyle:{
       height:'80vh',
       width:'100vw',
-      display:'grid',
-      gridTemplateColumns: 'repeat(4,1fr)',
-      backgroundColor: orange
+      //display:'grid',
+      //gridTemplateColumns: 'repeat(4,1fr)',
+      //backgroundColor: orange,
+      display: 'flex',
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center'
     },
     headingStyle:{
-      gridColumn:'1/5',
-      justifySelf:'center',
-      height:'15vh'
+      //gridColumn:'1/5',
+      //justifySelf:'center',
+      //height:'15vh'
+      margin: '2% 5%'
     },
     pStyle:{
       fontSize:'200%',
       color: blueBlk,
       marginTop:'5%'
     },
-    imgGridDiv:{
-      gridColumn:'1/5',
-      height:'65vh',
-      margin:'0% 3%'
-    },
+    // imgGridDiv:{
+    //   gridColumn:'1/5',
+    //   height:'65vh',
+    //   margin:'0% 3%'
+    // },
     imgsFlexDiv:{
       display:'flex',
       flexDirection:'row',
       flexWrap:'wrap',
       justifyContent:'space-evenly',
+      margin: '0% 3%'
 
     },
     imgTypeDiv:{
@@ -71,13 +77,13 @@ const styles ={
       flexDirection:'column',
       justifyContent:'center',
       alignItems:'center',
-      width:'23vw',
-      height: '23vh',
-      marginBottom:'5%'
+      width:'22vw',
+      height: '22vh',
+      margin:'0% 0% 5% 0%'
     },
     imgStyle:{
       borderRadius:'50%',
-      maxHeight:'20vh',
+      maxHeight:'15vh',
       maxWidth:'100%',
       marginTop:'2%',
       overflow:'hidden'
@@ -92,16 +98,21 @@ const styles ={
   smlViewStyle:{
     viewStyle:{
       //height:'80vh',
-      //width:'100%',
-      display:'grid',
-      gridTemplateColumns: 'repeat(4,1fr)',
+      width:'100%',
+
+      //display:'grid',
+      //gridTemplateColumns: 'repeat(4,1fr)',
       //backgroundColor: orange
+      display: 'flex',
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center'
     },
     headingStyle:{
-      gridColumn:'1/5',
-      justifySelf:'center',
-      margin:'0% 5%',
-      width:'85%',
+      //gridColumn:'1/5',
+      //justifySelf:'center',
+      margin:'2% 5% 4% 15%',
+      //width:'85%',
       //height:'20px'
     },
     pStyle:{
@@ -109,15 +120,18 @@ const styles ={
       color: blueBlk,
       marginTop:'2%'
     },
-    imgGridDiv:{
-      gridColumn:'1/5',
-      //height:'150px'
-    },
+    // imgGridDiv:{
+    //   //gridColumn:'1/5',
+    //   //height:'150px'
+    //   //display:'flex'
+    // },
     imgsFlexDiv:{
       display:'flex',
       flexDirection:'row',
       flexWrap:'wrap',
-      justifyContent:'space-evenly'
+      justifyContent:'space-evenly',
+      margin: '0% 3%'
+
     },
     imgTypeDiv:{
       display:'flex',
@@ -153,8 +167,7 @@ const renderBikeRow =(style)=>{
           We Have Bikes for Every Purpose and Budget
         </p>
       </div>
-      <div
-        style={style.imgGridDiv}>
+      {/*<div style={style.imgGridDiv}>*/}
         <div style={style.imgsFlexDiv}>
           {bikepics.map((p,i)=>{
             return(
@@ -177,7 +190,7 @@ const renderBikeRow =(style)=>{
             )
           })}
         </div>
-      </div>
+      {/*</div>*/}
     </div>
   )
 }
