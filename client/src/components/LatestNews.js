@@ -61,9 +61,9 @@ const styles ={
       //'height':'10vh'
     },
     headerP:{
-      fontSize:'2.5em',
+      fontSize:'2.25em',
       color: blueBlk,
-      marginTop:'0%'
+      margin:'2% 0%'
     },
     allBlogsDiv:{
       display:'flex',
@@ -80,7 +80,7 @@ const styles ={
       marginBottom:'5vh'
     },
     imgStyle:{
-      width:'25vw',
+      maxWidth:'100%',
       height:'25vh'
     },
     blogTitle:{
