@@ -7,21 +7,14 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 import Media from 'react-media'
 
-
-import services1 from '../images/bikeShopPics/services1.JPG'
-import services2 from '../images/bikeShopPics/services2.JPG'
-import services3 from '../images/bikeShopPics/services3.JPG'
 import tech1 from '../images/bikeShopPics/jonTech1.JPG'
 import tech2 from '../images/bikeShopPics/jonTech2.JPG'
 
 const lightBlue='#52A0F5'
-const orange = '#BB6558'
-const darkBlue = '#0073C4'
 const blueBlk='#1A3256'
 
 const fontStyle ={
   fontFamily:'Helvetica Neue, Helvetica, Arial, sans-serif',
-  //fontVariant: 'small-caps',
   color: blueBlk
 }
 
@@ -61,24 +54,18 @@ const styles = {
 
     },
     imgStyle:{
-      //maxWidth:'100%',
-      // maxHeight:'55vh',
-      // borderRadius: '10%'
       maxWidth:'100%',
-      //maxHeight:'26vh',
       borderRadius: '10%'
     },
     imgP:{
       fontSize:'175%',
-      margin:'2% 10% 0% 10%'
+      margin:'5% 10% 5% 10%'
     }
 
   },
 
   smlViewStyle:{
     mainDiv:{
-      //height:'80vh',
-      //width:'100%',
       display:'flex',
       flexDirection:'column',
       justifyContent:'center',
