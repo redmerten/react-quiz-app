@@ -49,7 +49,7 @@ const buttonStyle ={
 const styles ={
   lgViewStyle:{
     mainDiv:{
-      height:'80vh',
+      height:'90vh',
       width:'100vw',
       backgroundColor:lightBlue,
       display:'grid',
@@ -70,17 +70,17 @@ const styles ={
       justifyContent:'space-between',
       //'alignItems':'flex-start',
       //'maxHeight':'90vh',
-      margin:'0% 5% 0% 5%'
+      margin:'0% 5% 2% 5%'
     },
     blogDiv:{
       display:'flex',
       flexDirection:'column',
       justifyContent:'space-between',
       width: '25vw',
-      marginBottom:'5vh'
+      marginBottom:'5%'
     },
     imgStyle:{
-      maxWidth:'100%',
+      maxWidth:'25vw',
       height:'25vh'
     },
     blogTitle:{
