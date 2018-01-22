@@ -50,7 +50,7 @@ const styles = {
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
-      maxWidth:'40vw',
+      maxWidth:'32vw',
 
     },
     imgStyle:{
