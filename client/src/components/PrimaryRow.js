@@ -7,7 +7,6 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 import Media from 'react-media'
 
-
 import wideShopSign from '../images/bikeShopPics/wideshopsign.JPG'
 
 

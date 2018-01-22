@@ -1,15 +1,17 @@
-Offered to help a friend with a bike store build a new site.
+Offered to help a friend with a bike shop build a new site.
 
 Current site is WoodsideBikeShop.com.  How can I go wrong?
+New site is resting at woodside-bike-shop.herokuapp.com waiting for a few photos and blogs
 
-The owner does not want a store, barely wants to be contacted (I convinced him to add a call button), etc so there is very little data involved.  I did add a wordpress site and plan to add a query feature when there is some blog volume.  I set up the site so online purchases can be added later.
+This is a mobile friendly site using owner provided photos.
+It's a pretty simple site. I added a wordpress site and plan to add a query feature when there is some blog volume.  I set up the site so online purchases can be added later.
 
-I wanted to learn something from doing this site since it is so simple.  I decided to up my design skills so added grid, flexbox, and animation on scroll.  It's sooooo over animated.  I'll make sure it's mobile forward this week.
+I wanted to learn something from doing this site since it is so simple.  I decided to up my design skills so added grid, flexbox, and animation on scroll. I'm not a designer. Don't judge.
 
 I played with several npm styling packages and used some components from BlueprintJS. Hoping for a real complete component package in 2018.  No one is quite there yet.
 
 Stack:
-Node, Mongo (set up but not used yet), React, Redux
+React, Redux, Node, Mongo (set up but not used yet).
 
 Libraries/Tools:
 Create React App,
@@ -24,5 +26,6 @@ axios,
 react-animate-on-scroll,
 @blueprintjs/core,
 react-fa
+react-media
 
 
