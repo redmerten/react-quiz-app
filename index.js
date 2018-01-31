@@ -1,21 +1,15 @@
 //Set up for eventual online shopping
 
-
-
 const express = require('express')
 //const mongoose = require('mongoose')
 //const cookieSession = require('cookie-session')
 //const passport = require('passport')
-const keys = require('./config/keys')
+//const keys = require('./config/keys')
 
 //let mongoose know about schema. User must be listed before passport below
-// require('./models/User')
-// require('./models/Product')
-// require('./models/Cart')
+
 // require('./services/passport')
 // const authRoutes = require('./routes/authRoutes') //import authRoutes function
-//
-//
 //
 // mongoose.Promise = global.Promise
 // mongoose.connect(keys.mongoURI)
@@ -46,10 +40,7 @@ const app = express()
 //call authRoutes function
 //authRoutes(app)
 //require('./routes/authRoutes')(app)
-//require('./routes/productRoutes')(app)
-//require('./routes/cartRoutes')(app)
-require('./routes/blogRoutes')(app)
-require('./routes/serviceRoutes')(app)
+require('./routes/apiRoutes')(app)
 
 if (process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'))

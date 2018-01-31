@@ -14,14 +14,11 @@
     "@blueprintjs/core": "^1.29.0",
     "animate.css": "^3.5.2",
     "axios": "^0.16.2",
-    "glamor": "^2.20.40",
-    "grommet": "^1.8.0",
-    "grommet-cli": "^5.1.2",
     "lodash": "^4.17.4",
     "material-ui": "^0.19.4",
     "normalize.css": "^7.0.0",
+    "radium": "^0.21.2",
     "react": "^16.0.0",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-animate-on-scroll": "^1.6.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.0.0",
@@ -34,8 +31,7 @@
     "react-scripts": "1.0.14",
     "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "wordpress": "^1.4.0"
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

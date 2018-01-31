@@ -7,9 +7,9 @@
 import {combineReducers} from 'redux'  //action creators immediately return action+payload
 // import authReducer from './authReducer'
 
-import blogReducer from './blogReducer'
-import serviceChartReducer from './serviceChartReducer'
-import selectedBlogReducer from './selectedBlogReducer'
+import apiOneReducer from './apiOneReducer'
+import apiTwoReducer from './apiTwoReducer'
+import apiThreeReducer from './apiThreeReducer'
 
 
 //this is imported by main index.js
@@ -19,7 +19,7 @@ export default combineReducers({
   // products: productReducer,
   // images: imageReducer,
   // detail: prodDetailReducer
-  blog: blogReducer,
-  serviceChart: serviceChartReducer,
-  selectedBlog: selectedBlogReducer
+  dataApiOne: apiOneReducer,
+  dataApiTwo: apiTwoReducer,
+  dataApiThree: apiThreeReducer
 })
