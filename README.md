@@ -1,1 +1,1 @@
-This is a simple fullstack using react, redux, and node that shows how to fetch data from 2 apis, and with that data, fetch data from a third api
+This is a simple fullstack using react, redux, and node that shows how to fetch data from 2 apis after clicking a button, and with that data, fetch data from a third api without re-mounting the component
