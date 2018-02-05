@@ -10,16 +10,19 @@ import {combineReducers} from 'redux'  //action creators immediately return acti
 import apiOneReducer from './apiOneReducer'
 import apiTwoReducer from './apiTwoReducer'
 import apiThreeReducer from './apiThreeReducer'
+import stocksHistoricalReducer from './stocksHistoricalReducer'
+import stocksCurrentReducer from './stocksCurrentReducer'
+import stocksNewsReducer from './stocksNewsReducer'
 
 
 //this is imported by main index.js
-//auth piece of state is manufactured by the auth reducer
 export default combineReducers({
   // auth: authReducer,
-  // products: productReducer,
-  // images: imageReducer,
-  // detail: prodDetailReducer
   dataApiOne: apiOneReducer,
   dataApiTwo: apiTwoReducer,
-  dataApiThree: apiThreeReducer
+  dataApiThree: apiThreeReducer,
+  stockHistorical: stocksHistoricalReducer,
+  stockCurrent: stocksCurrentReducer,
+  stockNews: stocksNewsReducer
+
 })

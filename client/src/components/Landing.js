@@ -34,6 +34,7 @@ class Landing extends Component {
     console.log('state from landing', this.props)
     return (
       <div style={styles.div}>
+        <h4>Indivio API Example</h4>
         <Button
           onClick={()=>this.getOneAndTwo()}
           label='Publish'
@@ -101,5 +102,8 @@ const styles={
   buttonStyle:{
     margin:'2%',
     fontSize:'200%'
+  },
+  h4:{
+    margin:'2%'
   }
 }

@@ -19,6 +19,7 @@ export default Radium(Button)
 
 const styles={
   buttonStyle:{
+    fontSize: '120%',
     borderRadius:'2%',
     backgroundColor:'#b2aaaf',
     fontFamily: 'Helvetica',
@@ -28,13 +29,8 @@ const styles={
     border:'none',
     outline:'none',
     ':hover': {
-      backgroundColor: '#a29ba0'
-    },
-    // ':focus':{
-    //   borderColor:'#a29ba0',
-    //   backgroundColor: '#a29ba0',
-    //   transform: 'translateY(4px)',
-    // }
+      backgroundColor: '#a29ba0',
 
+    },
   }
 }

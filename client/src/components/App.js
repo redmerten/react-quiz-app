@@ -8,6 +8,8 @@ import '@blueprintjs/core/dist/blueprint.css'
 import Navbar from './Navbar'
 import Landing from './Landing'
 import Footer from './Footer'
+import USA from './USA-Map'
+import Stocks from './Stocks'
 
 
 class  App extends Component {
@@ -18,6 +20,8 @@ class  App extends Component {
           <div >
             <Navbar/>
             <Route exact path="/" component={Landing}/>
+            <Route path="/usa" component={USA}/>
+            <Route path="/stocks" component={Stocks}/>
             <Footer/>
           </div>
         </BrowserRouter>
@@ -25,7 +29,5 @@ class  App extends Component {
     )
   }
 }
-
-//this is imported by main index.js
 
 export default connect(null, actions)(App)

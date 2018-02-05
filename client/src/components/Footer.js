@@ -2,7 +2,7 @@
  * Created by CameronMerten on 10/19/17.
  */
 
-import React, {Component} from 'react'
+import React from 'react'
 
 const Footer =() => {
   return(
@@ -20,9 +20,9 @@ const styles={
     marginTop: '5%',
     width: '100%',
     justifyContent:'center',
-    borderTop: '2px solid black'
+    borderTop: '1px solid lightgrey'
   },
   p:{
-    marginTop:'5%'
+    marginTop:'5%',
   }
 }
