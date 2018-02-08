@@ -53,9 +53,9 @@ if (process.env.NODE_ENV === 'production'){
 
 const router = express.Router();
 if (process.env.NODE_ENV === 'production'){
-  io.use(express.static('client/build'))
+  router.use(express.static('client/build'))
   const path = require('path')
-  io.get('*', (req, res)=>{
+  router.get('*', (req, res)=>{
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
 }
