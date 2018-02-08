@@ -4,9 +4,9 @@ const express = require('express')
 const http = require("http");
 const socketIo = require("socket.io");
 const axios = require("axios");
-const socket = require("./routes/socket");
+//const socket = require("./routes/socket");
 const app = express();
-app.use(socket);
+//app.use(socket);
 const server = http.createServer(app);
 const io = socketIo(server);
 
@@ -51,12 +51,21 @@ if (process.env.NODE_ENV === 'production'){
   })
 }
 
+const router = express.Router();
+if (process.env.NODE_ENV === 'production'){
+  io.use(express.static('client/build'))
+  const path = require('path')
+  io.get('*', (req, res)=>{
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
+
 
 //heroku will pass runtime variables, if dev use 5000
 const PORT = process.env.PORT || 5000
 const socketPORT = process.env.PORT || 4001
 //express tells node to listen on port 5000
-app.listen(PORT)
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
 server.listen(socketPORT, () => console.log(`Listening on port ${socketPORT}`))
 
 
