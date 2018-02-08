@@ -54,7 +54,7 @@ if (process.env.NODE_ENV === 'production'){
 
 //heroku will pass runtime variables, if dev use 5000
 const PORT = process.env.PORT || 5000
-const socketPORT = process.env.PORT || 4001
+const socketPORT = process.env.socketPORT || 4001
 //express tells node to listen on port 5000
 app.listen(PORT)
 server.listen(socketPORT, () => console.log(`Listening on port ${socketPORT}`))
