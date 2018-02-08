@@ -60,11 +60,6 @@ class Stocks extends Component {
           <h3>{symbol}</h3>
           <h5>Current Price: {l} </h5>
           <h5>Change: {c} {cp}%</h5>
-          {this.state.response
-            ? <p>
-               Current Price: {l}
-            </p>
-            : <p>Loading...</p>}
         </div>
         )
     }
@@ -80,7 +75,7 @@ class Stocks extends Component {
      })
      let currentData
      if (Array.isArray(this.props.stockCurrent)) {
-       const {l, hi, lo, op} = this.props.stockCurrent[0]
+       const {l, hi, lo, op} = this.state.response ? this.state.response.stockCurrent[0]: this.props.stockCurrent[0]
         currentData= {
          x: new Date(),
          close:parseFloat(l),
@@ -151,7 +146,7 @@ class Stocks extends Component {
      })
      let currentData
      if (Array.isArray(this.props.stockCurrent)) {
-       let {l, op, vo} = this.props.stockCurrent[0]
+       let {l, op, vo} = this.state.response ? this.state.response.stockCurrent[0]: this.props.stockCurrent[0]
        vo = parseFloat(vo.slice(0,vo.length-3).split(',').join(''))
        currentData= {
          date: new Date(),
