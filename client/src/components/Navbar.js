@@ -20,15 +20,15 @@ class Navbar extends Component{
             label="D3 Charts"
           />
         </Link>
+        <Link to={`/stocks` } >
+          <Button
+            label="Victory Stock Charts"
+          />
+        </Link>
         <Link to={`/usa` } >
           <Button
             label="USA Map"
-          />
-        </Link>
-        <Link to={`/stocks` } >
-          <Button
-            label="Stock Charts"
-          />
+        />
         </Link>
       </div>
     )
