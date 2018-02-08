@@ -23,6 +23,6 @@ const styles={
     borderTop: '1px solid lightgrey'
   },
   p:{
-    marginTop:'5%',
+    marginTop:'1%',
   }
 }

@@ -48,3 +48,5 @@ export const fetchStocksNews = (stock='AAPL') => async dispatch => {
     {params: {stock}})
   dispatch({ type: FETCH_STOCKS_NEWS, payload: res.data})
 }
+
+

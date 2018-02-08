@@ -10,6 +10,7 @@ import Landing from './Landing'
 import Footer from './Footer'
 import USA from './USA-Map'
 import Stocks from './Stocks'
+import D3Examples from './D3Examples'
 
 
 class  App extends Component {
@@ -22,6 +23,7 @@ class  App extends Component {
             <Route exact path="/" component={Landing}/>
             <Route path="/usa" component={USA}/>
             <Route path="/stocks" component={Stocks}/>
+            <Route path="/d3" component={D3Examples}/>
             <Footer/>
           </div>
         </BrowserRouter>

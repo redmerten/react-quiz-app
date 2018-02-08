@@ -4,6 +4,8 @@
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import socketIOClient from "socket.io-client";
+
 import {
   VictoryChart,
   VictoryAxis,
@@ -12,22 +14,19 @@ import {
   VictoryTooltip,
   VictoryBar,
   VictoryLabel
-
 } from 'victory'
 import {fetchStocksHistorical, fetchStocksCurrent, fetchStocksNews} from '../actions/index'
 
-
 class Stocks extends Component {
-
-  state={
-    opening:'',
-    high:'',
-    low:'',
-    current:''
+  state = {
+    response: false,
+    endpoint: "http://127.0.0.1:4001"
   }
 
   componentDidMount(){
+
     this.props.fetchStocksCurrent(['DATA'])
+
     const today = new Date()
     let day=today.getDate()
     let month=today.getMonth()+1
@@ -41,18 +40,31 @@ class Stocks extends Component {
     else fromMonth = month-4
     const from = `${year}-${fromMonth}-01`
     this.props.fetchStocksHistorical('DATA', from, to)
+
     this.props.fetchStocksNews('DATA')
+
+    const { endpoint } = this.state;
+    const socket = socketIOClient(endpoint);
+    socket.on("FromAPI", data => {
+      console.log('socket',data)
+      this.setState({ response: {stockCurrent:data}})
+    });
   }
 
   renderStockInfo=()=>{
     if (Array.isArray(this.props.stockCurrent)) {
-      const {symbol, name, c, l, cp} = this.props.stockCurrent[0]
+      const {symbol, name, c, l, cp} = this.state.response ? this.state.response.stockCurrent[0]: this.props.stockCurrent[0]
       return(
         <div style={styles.stockInfoDiv}>
           <h2>My Current Favorite Stock Is {name}</h2>
           <h3>{symbol}</h3>
           <h5>Current Price: {l} </h5>
           <h5>Change: {c} {cp}%</h5>
+          {this.state.response
+            ? <p>
+               Current Price: {l}
+            </p>
+            : <p>Loading...</p>}
         </div>
         )
     }
@@ -139,13 +151,14 @@ class Stocks extends Component {
      })
      let currentData
      if (Array.isArray(this.props.stockCurrent)) {
-       const {l, op, vo} = this.props.stockCurrent[0]
+       let {l, op, vo} = this.props.stockCurrent[0]
+       vo = parseFloat(vo.slice(0,vo.length-3).split(',').join(''))
        currentData= {
          date: new Date(),
-         volume:parseFloat(vo)*1000000,
+         volume:vo,
          open:parseFloat(op),
          close:parseFloat(l),
-         label:`${parseFloat(vo.slice(0,vo.length-1))}m`
+         label:`${(vo/1000000).toFixed(1)}m`
        }
        volumeData.push(currentData)
      }
@@ -199,7 +212,6 @@ class Stocks extends Component {
     console.log('state from stocks', this.props)
     return (
       <div style={styles.div}>
-
         {this.renderStockInfo()}
         {Array.isArray(this.props.stockHistorical) ?
           <div>

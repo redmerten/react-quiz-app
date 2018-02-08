@@ -8,7 +8,7 @@ const apiThree=require('../apiData/apiThreeData.js')
 const googleFinance = require( 'google-finance'); //historical
 const googleStocks = require('google-stocks'); //current prices
 
-const stock=
+const stock= //just to show what data coming in looks like
   {
     symbol: 'DATA',
     exchange: 'NYSE',
@@ -38,14 +38,13 @@ module.exports = (app) => {
     res.send(apiTwo)
   })
 
-
   app.get('/api/three',  (req,res) =>{
-    const id = parseInt(req.query.id)
-    const response = apiThree.filter(e=>{
+      const id = parseInt(req.query.id)
+      const response = apiThree.filter(e=>{
       return e.id===id
-    })
-    //console.log(response)
-    res.send(response)
+      })
+      //console.log(response)
+      res.send(response)
   })
 
 

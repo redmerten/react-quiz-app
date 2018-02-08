@@ -15,6 +15,11 @@ class Navbar extends Component{
             label="Indivio API Example"
           />
         </Link>
+        <Link to={`/d3` } >
+          <Button
+            label="D3 Charts"
+          />
+        </Link>
         <Link to={`/usa` } >
           <Button
             label="USA Map"

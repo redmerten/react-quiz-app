@@ -1,46 +1,46 @@
 //Set up for eventual online shopping
 
 const express = require('express')
-//const mongoose = require('mongoose')
-//const cookieSession = require('cookie-session')
-//const passport = require('passport')
-//const keys = require('./config/keys')
+const http = require("http");
+const socketIo = require("socket.io");
+const axios = require("axios");
+const socket = require("./routes/socket");
+const app = express();
+app.use(socket);
+const server = http.createServer(app);
+const io = socketIo(server);
 
-//let mongoose know about schema. User must be listed before passport below
-
-// require('./services/passport')
-// const authRoutes = require('./routes/authRoutes') //import authRoutes function
-//
-// mongoose.Promise = global.Promise
-// mongoose.connect(keys.mongoURI)
-
-
-//app sets up config to listen for routing requests
-const app = express()
-
-
-//wireup middleware
-//cookieSession grabs cookie data; passport pulls id from cookie data
-// app.use(
-//   cookieSession({
-//     maxAge: 30*24*60*60*1000,//how long cookie can exist inside browser in ms
-//     keys: [keys.cookieKey]
-//   })
-// )
-//
-// app.use(passport.initialize())
-// app.use(passport.session())
-
-//app object is the running express server
-//app.get creates a route handler
-//watch for a request from root route (localhost:5000/)
-//req comes from the visit to '/'
-//then response is sent
-
-//call authRoutes function
-//authRoutes(app)
-//require('./routes/authRoutes')(app)
 require('./routes/apiRoutes')(app)
+
+let interval;
+io.on("connection", socket => {
+  console.log("New client connected");
+  if (interval) {
+    clearInterval(interval);
+  }
+  interval = setInterval(() => getApiAndEmit(socket), 10000);
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+  });
+});
+
+const googleStocks = require('google-stocks'); //current prices
+
+const getApiAndEmit = socket => {
+  try {
+    googleStocks(['DATA'])
+      .then (data=>{
+        const {symbol, t, name, c, l, cp, op, hi, lo, vo, avvo, hi52, lo52} = data[0]
+        let stockData = [{
+          symbol, t, name, c, l, cp, op, hi, lo, vo, avvo, hi52, lo52
+        }]
+        socket.emit("FromAPI", stockData)
+      })
+  } catch (error) {
+      console.error(`Error: ${error.code}`);
+  }
+};
+
 
 if (process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'))
@@ -54,8 +54,10 @@ if (process.env.NODE_ENV === 'production'){
 
 //heroku will pass runtime variables, if dev use 5000
 const PORT = process.env.PORT || 5000
+const socketPORT = process.env.PORT || 4001
 //express tells node to listen on port 5000
 app.listen(PORT)
+server.listen(socketPORT, () => console.log(`Listening on port ${socketPORT}`))
 
 
 
