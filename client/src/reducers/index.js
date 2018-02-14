@@ -1,28 +1,16 @@
 /**
- * Created by CameronMerten on 9/28/17.
  */
 
 //index.js allows app to import all reducers (data) at once
 
 import {combineReducers} from 'redux'  //action creators immediately return action+payload
 // import authReducer from './authReducer'
-
-import apiOneReducer from './apiOneReducer'
-import apiTwoReducer from './apiTwoReducer'
-import apiThreeReducer from './apiThreeReducer'
-import stocksHistoricalReducer from './stocksHistoricalReducer'
-import stocksCurrentReducer from './stocksCurrentReducer'
-import stocksNewsReducer from './stocksNewsReducer'
-
+import quizReducer from './quizReducer'
+import finalReducer from './finalReducer'
 
 //this is imported by main index.js
+//auth piece of state is manufactured by the auth reducer
 export default combineReducers({
-  // auth: authReducer,
-  dataApiOne: apiOneReducer,
-  dataApiTwo: apiTwoReducer,
-  dataApiThree: apiThreeReducer,
-  stockHistorical: stocksHistoricalReducer,
-  stockCurrent: stocksCurrentReducer,
-  stockNews: stocksNewsReducer
-
+  quiz: quizReducer,
+  final: finalReducer
 })

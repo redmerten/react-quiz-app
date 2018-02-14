@@ -2,34 +2,13 @@
  * Created by AndreaMerten on 1/27/18.
  */
 import React, {Component} from "react"
-import {Link} from 'react-router-dom'
-import Button from './Button'
-
+//import CherryCreamSoda from 'typeface-cherry-cream-soda'
 class Navbar extends Component{
   render(){
     return(
       <div style={styles.navbar}>
-        <p style={styles.p}>React Examples</p>
-        <Link to={`/` } >
-          <Button
-            label="Indivio API Example"
-          />
-        </Link>
-        <Link to={`/d3` } >
-          <Button
-            label="D3 Charts"
-          />
-        </Link>
-        <Link to={`/stocks` } >
-          <Button
-            label="Victory Stock Charts"
-          />
-        </Link>
-        <Link to={`/usa` } >
-          <Button
-            label="USA Map"
-        />
-        </Link>
+        <p style={styles.p}>React Interview Questions</p>
+
       </div>
     )
   }
@@ -45,15 +24,14 @@ const styles={
     width: '100%',
     height: '70px',
     display:'flex',
-    justifyContent:'space-evenly',
+    justifyContent:'center',
     alignItems:'center',
-    backgroundColor:'#5d5799',
-
+    backgroundColor:'#5d5799'
   },
   p:{
     fontSize: '200%',
-    fontFamily: 'Helvetica',
-    color: '#dbd1d7',
-    marginTop:'.5%'
+    fontFamily: 'Cherry Cream Soda',
+    color: '#dbd1d7'
+
   }
 }

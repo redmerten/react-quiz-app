@@ -2,7 +2,6 @@
  * Created by AndreaMerten on 1/27/18.
  */
 import React from 'react'
-import Radium from 'radium';
 
 const IndexCard = (props)=>{
   return(
@@ -22,6 +21,7 @@ const styles={
     border: '1px solid #b2aaaf',
     backgroundColor: '#dbd1d7',
     display: 'flex',
+    flexDirection:'column',
     justifyContent: 'center',
     alignItems: 'center',
 

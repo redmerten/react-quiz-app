@@ -4,10 +4,17 @@
 import React from 'react'
 import Radium from 'radium';
 
-const Button = ({style, onClick, children, label}) =>{
+const Button = ({style, onClick, children, label, colors}) =>{
+  const buttonColors={
+    backgroundColor: colors.background,
+    color: colors.color,
+    ':hover': {
+      backgroundColor: colors.hover
+    },
+  }
   return(
     <button
-      style={{...style, ...styles.buttonStyle}}
+      style={{...buttonColors, ...style, ...styles.buttonStyle}}
       onClick={onClick}
     >
       {label}
@@ -19,18 +26,11 @@ export default Radium(Button)
 
 const styles={
   buttonStyle:{
-    fontSize: '120%',
     borderRadius:'2%',
-    backgroundColor:'#b2aaaf',
-    fontFamily: 'Helvetica',
-    color: '#5d5799',
+    fontFamily: 'Cherry Cream Soda',
     height:'50px',
     width: '200px',
     border:'none',
     outline:'none',
-    ':hover': {
-      backgroundColor: '#a29ba0',
-
-    },
   }
 }

@@ -18,19 +18,16 @@
     "license": "ISC",
     "dependencies": {
         "axios": "^0.17.1",
+        "body-parser": "^1.18.2",
         "concurrently": "^3.5.0",
         "cookie-session": "^1.3.2",
-        "d3-array": "^1.2.1",
         "express": "^4.15.5",
-        "google-finance": "^0.1.11",
-        "google-stocks": "^2.0.1",
+        "express-graphql": "^0.6.11",
+        "graphql": "^0.13.0",
         "mongoose": "^4.12.0",
         "passport": "^0.4.0",
         "passport-facebook": "^2.1.1",
         "passport-google-oauth20": "^1.0.0",
-        "rc-menu": "^6.2.5",
-        "socket.io": "^2.0.4",
-        "wordpress": "^1.4.0",
-        "xlsx": "^0.11.13"
+        "rc-menu": "^6.2.5"
     }
 }
